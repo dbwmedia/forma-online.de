@@ -1,0 +1,11 @@
+/*
+ Theme Name:   dbw media Child Theme
+ Theme URI:    https://github.com/dbwmedia
+ Description:  Ein Child-Theme basierend auf dem GeneratePress-Theme, angepasst von und für dbw media.
+ Author: dbw media | Dennis Buchwald
+ Author URI:   
+ Template:     generatepress
+ Version:      1.1
+ */
+
+@import "build/index.css";

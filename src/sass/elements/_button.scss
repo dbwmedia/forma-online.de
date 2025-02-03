@@ -1,0 +1,198 @@
+@use "../global" as *;
+
+body .gb-button,
+body a.gb-button,
+body button.gb-button {
+	display: flow-root;
+	position: relative;
+	width: fit-content;
+	transition: 0.5s ease all;
+	padding: 0.8rem !important;
+
+	// Gemeinsame Stile für primary und inverted, soweit möglich
+	&--primary,
+	&--inverted,
+	&--secondary {
+		display: inline-flex;
+		border-radius: 10px;
+		border: 0 solid;
+		&:hover {
+			cursor: pointer;
+		}
+		&:active {
+		}
+		&:focus {
+		}
+	}
+
+	// Stile speziell für primary Buttons
+	&--primary {
+		border: 0 solid;
+		color: white;
+		background: $button-primary;
+
+		&.gb-block-is-current {
+		}
+
+		&:before {
+			background: $button-primary;
+			-webkit-mask:
+				linear-gradient(#fff 0 0) padding-box,
+				linear-gradient(#fff 0 0);
+
+			content: "";
+			z-index: 1;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border-radius: 10px;
+			border: 2px solid transparent;
+			-webkit-mask-composite: destination-out;
+			mask-composite: exclude;
+			transition: 0.3s ease all !important;
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+
+		&:hover {
+			background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))
+				border-box;
+			color: $c-primary;
+		}
+	}
+
+	// Stile speziell für inverted Buttons
+	&--inverted {
+		color: $c-primary;
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))
+			border-box;
+
+		&:before {
+			background: $button-primary;
+			-webkit-mask:
+				linear-gradient(#fff 0 0) padding-box,
+				linear-gradient(#fff 0 0);
+
+			content: "";
+			z-index: 1;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border-radius: 10px;
+			border: 2px solid transparent;
+			-webkit-mask-composite: destination-out;
+			mask-composite: exclude;
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+		&:hover {
+			background: $button-primary;
+		}
+		&:active {
+		}
+		&:focus {
+		}
+
+		&-is-current {
+		}
+	}
+
+	// Stile speziell für inverted Buttons
+	&--secondary {
+		background-color: $c-secondary;
+		color: $c-white;
+
+		&:hover {
+			background-color: $c-secondary-hover;
+			border-color: $c-secondary-hover;
+		}
+		&:active {
+			background-color: $c-secondary-hover;
+			border-color: $c-secondary-hover;
+		}
+		&:focus {
+			background-color: $c-secondary-hover;
+			border-color: $c-secondary-hover;
+		}
+
+		&-is-current {
+			background-color: $c-secondary;
+			border-color: $c-secondary;
+		}
+	}
+
+	// Stile für die gb-block-is-current Klasse, unabhängig von primary/inverted
+	&.gb-block-is-current {
+		background-color: $c-primary;
+		border-color: $c-primary;
+
+		&:active {
+			border-color: $c-primary;
+			background-color: $c-primary;
+		}
+		&:focus {
+			border-color: $c-primary;
+			background-color: $c-primary;
+		}
+	}
+
+	@include mq($until: $mobile) {
+		padding: 0.7rem !important;
+	}
+	/*
+	@include mq($until: $mobile) {
+		padding: 0.5rem !important;
+	}
+		*/
+}
+
+div.wpforms-container-full button[type="submit"] {
+	background-color: $c-primary !important;
+	&:hover {
+		background-color: $c-primary-hover !important;
+		background: $c-primary-hover !important;
+	}
+}
+
+body #content .gb-tabs {
+	.gb-tabs__items {
+		background-color: $c-grayBg;
+		border-radius: $borderRadiusXS;
+		border: $b-border;
+	}
+	.gb-tabs__buttons {
+		.gb-button,
+		.gb-block-is-current {
+			background-color: transparent;
+			border-color: transparent;
+			border-radius: 0 !important;
+			font-size: 20px;
+			color: $c-headline;
+			box-shadow: none;
+		}
+
+		.gb-button {
+			border-bottom: 3px solid rgb(248, 249, 250);
+		}
+		.gb-block-is-current {
+			border-bottom: 3px solid $c-primary;
+		}
+	}
+}
+
+.btn-container {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
