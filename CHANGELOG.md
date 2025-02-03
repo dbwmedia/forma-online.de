@@ -11,6 +11,8 @@
 - **Prettier-/VS Code‐Konfiguration überarbeitet**:
   - .prettierignore hinzugefügt, um große Verzeichnisse (z. B. node_modules, dist) vom Formatieren auszuschließen
   - Optionale lokale .prettierrc integriert (ggf. mit @wordpress/prettier-config)
+- **Direkte FTP-Verbindung zum Server**:
+  - Das Theme kann jetzt direkt per FTP mit dem Server kommunizieren, um Änderungen effizient bereitzustellen.
 
 ## [1.0.1] - 31.01.2024
 
