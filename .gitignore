@@ -1,7 +1,7 @@
 # Ignore auto generated files & other
 /.git/
 /.vscode/
-.idea
+/.idea
 .prettierignore
 .DS_Store
 node_modules/
