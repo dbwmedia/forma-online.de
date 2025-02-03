@@ -1,6 +1,6 @@
 # Ignore auto generated files & other
 /.git/
-.vscode
+/.vscode/
 .idea
 .prettierignore
 .DS_Store
