@@ -3,8 +3,8 @@
 // todo: tbc
 //--------------------------------------------------------------
 
-$c-primary: #cc0018;
-$c-primary-hover: #e6393d;
+$c-primary: #ff694a;
+$c-primary-hover: #ff694a;
 $c-primaryLight: lighter($c-primary);
 $c-secondary: #6a747c;
 $c-secondary-hover: #8a9399;
@@ -53,7 +53,7 @@ $b-padding: 15px 30px;
 $b-borderWidth: 1px;
 $b-borderStyle: solid;
 $b-borderRadius: 0;
-$b-border: 1px solid #e5e7e9;
+$b-border: 1px solid rgba(0, 0, 0, 0.3);
 
 $button-primary: linear-gradient(90deg, $c-primary, $c-primary-hover) border-box;
 $button-secondary: linear-gradient(90deg, $c-secondary, $c-secondary-hover)
@@ -107,7 +107,7 @@ $wide: 1440px; // xxl
 //--------------------------------------------------------------
 
 $containerWidth: 80%;
-$containerMaxWidth: 1600px; // todo: tbc
+$containerMaxWidth: 1800px; // todo: tbc
 $containerPad: 10%;
 
 //--------------------------------------------------------------

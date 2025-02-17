@@ -36,16 +36,6 @@ function headers() {
 }
 
 //------------------------------------------------
-// # include custom.js
-// ------------------------------------------------
-function customScriptJS() {
-    wp_register_script('custom', get_stylesheet_directory_uri() . '/src/js/custom.js', array('jquery'), '1.0', true);
-    wp_enqueue_script('custom');
-}
-add_action('wp_enqueue_scripts', 'customScriptJS');
-
-
-//------------------------------------------------
 // # CF7 
 // ------------------------------------------------
 function custom_math_captcha_validation($result, $tag) {

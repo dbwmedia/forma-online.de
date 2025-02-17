@@ -1,6 +1,51 @@
 @use "../global" as *;
 
 .site-footer {
-	background-color: $c-black;
-	color: $c-white;
+	background-color: $c-primary;
+	a,
+	p {
+		color: $c-black;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"lefttop righttop"
+			"leftbot rightbot";
+		gap: $gap;
+
+		.item-1 {
+			grid-area: lefttop;
+			img {
+				filter: invert(1);
+			}
+		}
+
+		.item-2 {
+			grid-area: righttop;
+			text-align: end;
+		}
+
+		.item-3 {
+			grid-area: leftbot;
+		}
+
+		.item-4 {
+			grid-area: rightbot;
+		}
+
+		/* Breakpoint Settings */
+
+		@include mq($until: $laptop) {
+		}
+
+		@include mq($until: $mobile) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	.legal {
+		margin-top: 50px;
+	}
 }

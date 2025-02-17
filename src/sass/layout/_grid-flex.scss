@@ -3,9 +3,7 @@
 /* Flexbox */
 .flex-two {
 	display: flex;
-	gap: 75px;
-	margin: 50px auto;
-
+	gap: $gap;
 	> div {
 		display: flex;
 		flex: 1;
@@ -185,7 +183,7 @@ s .d-flex-wrap-justify-spacearound {
 	grid-template-columns: repeat(4, 1fr);
 	gap: $gap-s;
 
-	.item {
+	> div {
 		display: flex;
 		flex-direction: column;
 		gap: 20px;

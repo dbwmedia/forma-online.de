@@ -63,3 +63,9 @@
 		padding-top: 250px;
 	}
 }
+
+.hero {
+	> div:last-child {
+		border-bottom: $b-border;
+	}
+}

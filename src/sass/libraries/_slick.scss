@@ -21,7 +21,6 @@
 /* Slider */
 .slick-slider {
 	position: relative;
-
 	display: block;
 	box-sizing: border-box;
 
@@ -87,11 +86,12 @@
 
 .slick-slide {
 	display: none;
-	//float: left;
-
 	height: 100%;
 	min-height: 1px;
+	margin: 0 20px;
+	aspect-ratio: 16/9;
 }
+
 [dir="rtl"] .slick-slide {
 	//float: right;
 }
@@ -246,4 +246,10 @@
 
 .slick-next.slick-arrow:hover {
 	opacity: 1;
+}
+
+.slider--hero {
+	.slick-prev {
+		display: none !important;
+	}
 }

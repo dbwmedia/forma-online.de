@@ -1,0 +1,32 @@
+@use "../global" as *;
+
+.project-wrapper {
+	.project-grid {
+		display: grid;
+		gap: $gap;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"lefttop righttop"
+			"lefttop rightbot"
+			"leftbot rightbot";
+		grid-auto-rows: 1fr;
+		border-bottom: $b-border;
+	}
+
+	.project:nth-child(1) {
+		grid-area: lefttop;
+	}
+
+	.project:nth-child(2) {
+		grid-area: righttop;
+	}
+
+	.project:nth-child(3) {
+		grid-area: rightbot;
+	}
+
+	.button-container {
+		text-align: center;
+		grid-area: leftbot;
+	}
+}
