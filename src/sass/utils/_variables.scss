@@ -42,7 +42,7 @@ $s-xl: calc($space * 2); // 200px
 
 $gap-s: 20px;
 $gap: 40px;
-$gap-xl: 60px;
+$gap-xl: 100px;
 
 //--------------------------------------------------------------
 // # Buttons
@@ -53,7 +53,7 @@ $b-padding: 15px 30px;
 $b-borderWidth: 1px;
 $b-borderStyle: solid;
 $b-borderRadius: 0;
-$b-border: 1px solid rgba(0, 0, 0, 0.3);
+$b-border: 2px solid rgba(0, 0, 0, 0.3);
 
 $button-primary: linear-gradient(90deg, $c-primary, $c-primary-hover) border-box;
 $button-secondary: linear-gradient(90deg, $c-secondary, $c-secondary-hover)

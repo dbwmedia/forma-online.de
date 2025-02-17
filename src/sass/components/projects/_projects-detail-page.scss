@@ -1,0 +1,75 @@
+@use "../../global" as *;
+
+.project-detail-wrapper {
+	.product-detail-hero {
+		border-top: $b-border;
+		padding: 50px 0 100px 0;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: min-content; // Anpassung der Zeilenhöhe an den Inhalt
+		gap: $gap;
+
+		.hero-img {
+			grid-column: span 2 / span 2;
+			img {
+				min-width: 100%;
+			}
+		}
+	}
+
+	// Galerie-Bereich
+	.product-gallery {
+		.gallery-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: $gap-xl;
+
+			.gallery-item {
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+		&--rev {
+			.gallery-grid {
+				direction: rtl; // Ändert die Reihenfolge der Bilder innerhalb des Grids
+				.gallery-item {
+					direction: ltr; // Stellt sicher, dass der Inhalt in den Items nicht gespiegelt wird
+				}
+			}
+		}
+		&--full-width {
+			.gallery-grid {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+
+				.gallery-item {
+					width: 100%; // Volle Breite nutzen
+					img {
+						width: 100%;
+						height: auto;
+						object-fit: cover; // Sorgt für gutes Scaling
+					}
+				}
+			}
+		}
+	}
+}
+
+// Zitat-Block
+.product-quote {
+	text-align: center;
+	margin: 75px 0;
+	display: flex;
+	justify-content: flex-end;
+
+	.gb-text {
+		width: 50%;
+		padding: 3em 0;
+		text-align: left;
+		margin-bottom: 0;
+	}
+}

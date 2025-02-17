@@ -1,6 +1,44 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/components/contactPopup.js":
+/*!*******************************************!*\
+  !*** ./src/js/components/contactPopup.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const Component_ContactPopup = () => {
+  document.addEventListener("DOMContentLoaded", () => {
+    const popupTrigger = document.querySelector(".popup-trigger");
+    const popup = document.getElementById("contact-popup");
+    const closeBtn = document.querySelector(".close-popup");
+    if (!popupTrigger || !popup || !closeBtn) {
+      return;
+    }
+
+    // Öffnen des Popups
+    popupTrigger.addEventListener("click", event => {
+      event.preventDefault();
+      popup.classList.add("open");
+    });
+
+    // Schließen des Popups bei Klick auf den Schließen-Button oder außerhalb des Popups
+    popup.addEventListener("click", event => {
+      if (event.target === popup || event.target.classList.contains("close-popup")) {
+        popup.classList.remove("open");
+      }
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Component_ContactPopup);
+
+/***/ }),
+
 /***/ "./src/js/components/offsetScroll.js":
 /*!*******************************************!*\
   !*** ./src/js/components/offsetScroll.js ***!
@@ -329,15 +367,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_toggleLabelPosition__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/toggleLabelPosition */ "./src/js/components/toggleLabelPosition.js");
 /* harmony import */ var _components_updateDynamicAnchors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/updateDynamicAnchors */ "./src/js/components/updateDynamicAnchors.js");
 /* harmony import */ var _components_slick__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/slick */ "./src/js/components/slick.js");
+/* harmony import */ var _components_contactPopup__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/contactPopup */ "./src/js/components/contactPopup.js");
 
 
 
 
 
 
-//import Component_ComtactPopup from "./components/contactPopup";
-
-//Component_ComtactPopup();
+(0,_components_contactPopup__WEBPACK_IMPORTED_MODULE_5__["default"])();
 (0,_components_toggleLabelPosition__WEBPACK_IMPORTED_MODULE_2__["default"])();
 (0,_components_updateDynamicAnchors__WEBPACK_IMPORTED_MODULE_3__["default"])();
 (0,_components_offsetScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();

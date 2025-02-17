@@ -1,0 +1,60 @@
+@use "../global" as *;
+
+#contact-popup {
+	background-color: $c-primary;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	visibility: hidden;
+	opacity: 0;
+	transition:
+		opacity 0.3s ease,
+		visibility 0.3s ease;
+
+	// Animiertes Popup-Fenster
+	.popup-content {
+		min-height: 80vh !important;
+		min-width: 80vh !important;
+		position: relative;
+		transform: translate(50vw, -50vh);
+		opacity: 0;
+		transition:
+			transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+			opacity 0.5s ease;
+
+		.grid {
+			min-height: 80vh !important;
+			min-width: 80vh !important;
+		}
+
+		.legal {
+			justify-content: space-between;
+		}
+	}
+
+	.close-popup {
+		cursor: pointer;
+		display: block;
+		margin-top: 10px;
+		position: absolute;
+		top: 5%;
+		right: 2%;
+		background-color: transparent;
+	}
+
+	&.open {
+		visibility: visible;
+		opacity: 1;
+		z-index: 999;
+
+		.popup-content {
+			transform: translate(0, 0);
+			opacity: 1;
+		}
+	}
+}

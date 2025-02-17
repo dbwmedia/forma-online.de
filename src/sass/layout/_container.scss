@@ -7,12 +7,12 @@
 
 	&--content__fullwidth {
 		width: 100%;
-		padding: 30px 3%;
-		@media (max-width: 1200px) {
+		padding: 50px 3%;
+		@media (max-width: $laptop) {
 			padding: 30px 3%;
 		}
 
-		@media (max-width: 500px) {
+		@media (max-width: $mobile) {
 			padding: 30px 3%;
 		}
 
