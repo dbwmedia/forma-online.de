@@ -591,6 +591,11 @@ mark,
   margin-inline: unset;
 }
 
+.headline-narrow {
+  max-width: 70%;
+  margin-inline: unset;
+}
+
 .text-split {
   padding: 0px 0 75px 0;
 }
@@ -604,6 +609,20 @@ mark,
 }
 .offset--top__md {
   margin-top: 100px;
+}
+
+.spacer {
+  display: block;
+  width: 100%;
+}
+.spacer--small {
+  height: 50px;
+}
+.spacer--medium {
+  height: 100px;
+}
+.spacer--large {
+  height: 150px;
 }
 
 #page {
@@ -1230,6 +1249,34 @@ s .d-flex-wrap-justify-spacearound {
   }
 }
 
+.grid-featured-three {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(220px, 280px);
+  gap: 20px;
+  /* Breakpoint Settings */
+}
+.grid-featured-three > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 1200px) {
+  .grid-featured-three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .grid-featured-three {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid-featured-three > div {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow: 1;
+  }
+}
+
 .grid-eight-four {
   display: grid;
   grid-template-columns: 8fr 4fr;
@@ -1651,6 +1698,19 @@ s .d-flex-wrap-justify-spacearound {
   grid-area: leftbot;
 }
 
+.gallery-looper .gallery-item {
+  position: relative;
+}
+.gallery-looper .gallery-item a {
+  color: transparent;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .project-detail-wrapper .product-detail-hero {
   border-top: 2px solid rgba(0, 0, 0, 0.3);
   padding: 50px 0 100px 0;
@@ -1709,8 +1769,8 @@ s .d-flex-wrap-justify-spacearound {
   margin-bottom: 0;
 }
 
-.collection-wrapper .button-container {
-  justify-content: center;
+.collection-overview .collections-list ul {
+  margin-right: 400px;
 }
 
 #contact-popup {
@@ -1922,7 +1982,7 @@ s .d-flex-wrap-justify-spacearound {
   }
 }
 
-.hero > div:last-child {
+.hero > *:last-child {
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -1972,7 +2032,8 @@ body .gb-button--primary,
 body a.gb-button--primary,
 body button.gb-button--primary,
 body button--primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background-color: transparent;
   border: 2px solid #ff694a;
   color: #ff694a;
@@ -1985,6 +2046,19 @@ body button--primary:hover {
   background: #ff694a;
   color: #fff;
   text-decoration: none;
+}
+body .gb-button--primary .gb-shape svg,
+body a.gb-button--primary .gb-shape svg,
+body button.gb-button--primary .gb-shape svg,
+body button--primary .gb-shape svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+body .gb-button--primary .gb-shape svg:hover line,
+body a.gb-button--primary .gb-shape svg:hover line,
+body button.gb-button--primary .gb-shape svg:hover line,
+body button--primary .gb-shape svg:hover line {
+  stroke: #fff !important;
 }
 body .gb-button--inverted,
 body a.gb-button--inverted,

@@ -30,3 +30,18 @@
 		grid-area: leftbot;
 	}
 }
+
+.gallery-looper {
+	.gallery-item {
+		position: relative;
+		a {
+			color: transparent;
+			background: transparent;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

@@ -115,10 +115,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+let animationFrame; // Variable für die Pause-Funktion
+
 const Slick = () => {
+  // Hero-Slider (läuft ohne Pause)
   jQuery(".slider--hero").slick({
     dots: false,
-    loop: true,
     arrows: true,
     infinite: true,
     autoplay: true,
@@ -129,28 +131,58 @@ const Slick = () => {
     cssEase: "linear",
     variableWidth: true
   });
+
+  // Collection-Slider (läuft als Band)
+  jQuery(".slider--collection").slick({
+    draggable: false,
+    dots: false,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    useTransform: false,
+    autoplaySpeed: 0,
+    speed: 12500,
+    cssEase: "linear",
+    variableWidth: true,
+    slidesToScroll: 1
+  });
+
+  // **Sofortiges Stoppen beim Hover**
+  jQuery(".slider--collection").on("mouseenter", function () {
+    console.log("Hover erkannt: Slider stoppt sofort");
+    let $slickTrack = jQuery(this).find(".slick-track");
+
+    // Speichert den aktuellen Transform-Wert
+    let currentTransform = $slickTrack.css("transform");
+
+    // Stoppt die Animation (keine neue Frames mehr)
+    cancelAnimationFrame(animationFrame);
+
+    // Pausiert den Slider sofort
+    $slickTrack.css({
+      transition: "none",
+      // Entfernt weiche Animation
+      transform: currentTransform // Hält den aktuellen Stand
+    });
+  });
+
+  // **Bewegung fortsetzen beim Verlassen**
+  jQuery(".slider--collection").on("mouseleave", function () {
+    console.log("Hover verlassen: Bewegung setzt sich fort");
+    let $slickTrack = jQuery(this).find(".slick-track");
+
+    // Setzt Animation fort
+    $slickTrack.css({
+      transition: "transform 12.5s linear" // Startet sanft neu
+    });
+
+    // Startet Slick erneut, falls nötig
+    animationFrame = requestAnimationFrame(() => {
+      jQuery(".slider--collection").slick("slickPlay");
+    });
+  });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Slick);
-
-// const Slick = () => {
-// 	jQuery(".slider--ec").slick({
-// 		dots: false, // Keine Punkte, optional
-// 		arrows: true, // Pfeile aktiviert
-// 		infinite: true, // Endlos-Modus
-// 		autoplay: true, // Automatische Bewegung
-// 		autoplaySpeed: 0, // Sofortige, kontinuierliche Bewegung
-// 		speed: 5000, // Geschwindigkeit der Animation
-// 		cssEase: "linear", // Flüssige Bewegung
-// 		slidesToShow: 1.5, // 1 Slide vollständig sichtbar, der zweite leicht angeschnitten
-// 		slidesToScroll: 1, // Kontinuierliches Scrollen
-// 		centerMode: true, // Mitte zentrieren
-// 		variableWidth: false, // Einheitliche Bildgrößen beibehalten
-// 		pauseOnHover: false, // Bewegung wird nicht durch Hover gestoppt
-// 		accessibility: false, // Deaktiviert unnötige ARIA-Warnungen
-// 	});
-// };
-
-// export default Slick;
 
 /***/ }),
 

@@ -28,7 +28,8 @@ body button {
 
 	// Stile speziell für primary Buttons
 	&--primary {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
 		background-color: transparent;
 		border: 2px solid $c-primary;
 		color: $c-primary;
@@ -41,6 +42,15 @@ body button {
 			background: $c-primary;
 			color: $c-white;
 			text-decoration: none;
+		}
+
+		.gb-shape svg {
+			width: 1.2em;
+			height: 1.2em;
+
+			&:hover line {
+				stroke: $c-white !important;
+			}
 		}
 	}
 

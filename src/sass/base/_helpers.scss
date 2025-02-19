@@ -16,3 +16,20 @@
 		margin-top: $s-md;
 	}
 }
+
+.spacer {
+	display: block;
+	width: 100%;
+
+	&--small {
+		height: $s-sm;
+	}
+
+	&--medium {
+		height: $s-md;
+	}
+
+	&--large {
+		height: $s-lg;
+	}
+}
