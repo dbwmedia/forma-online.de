@@ -14,6 +14,24 @@ textarea {
 	font-family: Helvetica, Arial, sans-serif;
 }
 
+h1 {
+	font-family: var(--gp-font--archivo);
+}
+
+h2 {
+	font-family: var(--gp-font--spectral);
+}
+
+h3,
+h4 {
+	font-family: var(--gp-font--archivo);
+}
+
+a,
+p {
+	font-family: var(--gp-font--archivo);
+}
+
 p {
 	margin-bottom: 0.8em;
 	font-size: $f-sizeBody;

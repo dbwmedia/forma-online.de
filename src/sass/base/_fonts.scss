@@ -1,77 +1,33 @@
 @use "../global" as *;
 
-
-/* 
-
+/* Archivo (Reguläre Schrift) */
 @font-face {
-	font-family: $f-font;
+	font-family: "Archivo";
 	font-weight: 400;
 	font-style: normal;
-	src: url("#{$fontsPath}new-zen/New_Zen_Regular.otf") format("opentype");
+	src: url("#{$fontsPath}Archivo-Regular.ttf") format("truetype");
 }
 
+/* Spectral (Reguläre Schrift) */
 @font-face {
-	font-family: $f-font;
+	font-family: "Spectral";
 	font-weight: 400;
-	font-style: italic;
-	src: url("#{$fontsPath}new-zen/New_Zen_Regular_Italic.otf") format("opentype");
-}
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 300;
 	font-style: normal;
-	src: url("#{$fontsPath}new-zen/New_Zen_Light.otf") format("opentype");
+	src: url("#{$fontsPath}Spectral-Regular.ttf") format("truetype");
 }
 
+/* Roboto Mono (Variable Font mit vollem Gewichtsbereich) */
 @font-face {
-	font-family: $f-font;
-	font-weight: 300;
-	font-style: italic;
-	src: url("#{$fontsPath}new-zen/New_Zen_Light_Italic.otf") format("opentype");
-}
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 500;
+	font-family: "Roboto Mono";
+	font-weight: 100 700;
 	font-style: normal;
-	src: url("#{$fontsPath}new-zen/New_Zen_Medium.otf") format("opentype");
+	src: url("#{$fontsPath}RobotoMono-VariableFont_wght.ttf") format("truetype");
 }
 
+/* Roboto Mono (Kursiv, falls vorhanden) */
 @font-face {
-	font-family: $f-font;
-	font-weight: 500;
+	font-family: "Roboto Mono";
+	font-weight: 100 700;
 	font-style: italic;
-	src: url("#{$fontsPath}new-zen/New_Zen_Medium_Italic.otf") format("opentype");
+	src: url("#{$fontsPath}RobotoMono-VariableFont_wght.ttf") format("truetype");
 }
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 700;
-	font-style: normal;
-	src: url("#{$fontsPath}new-zen/New_Zen_Bold.otf") format("opentype");
-}
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 700;
-	font-style: italic;
-	src: url("#{$fontsPath}new-zen/New_Zen_Bold_Italic.otf") format("opentype");
-}
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 100;
-	font-style: normal;
-	src: url("#{$fontsPath}new-zen/New_Zen_Thin.otf") format("opentype");
-}
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 100;
-	font-style: italic;
-	src: url("#{$fontsPath}new-zen/New_Zen_Thin_Italic.otf") format("opentype");
-}
-
-
-*/

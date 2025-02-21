@@ -17,6 +17,8 @@ require_once get_stylesheet_directory() . '/includes/dbw/dbw-head.php';
 // Font Awesome
 require_once get_stylesheet_directory() . '/includes/fontawesome-enqueue.php';
  
+// WooCommerce Gutenberg Erweiterung
+require_once get_stylesheet_directory() . '/includes/woocommerce/dbw-woocommerce-gutenberg.php';
 
 //------------------------------------------------
 // # returns meta and favicon

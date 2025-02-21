@@ -144,6 +144,37 @@ body button {
 		*/
 }
 
+body button,
+body .gb-button {
+	// Gemeinsame Stile für primary und inverted, soweit möglich
+
+	&--shop {
+		display: flow-root;
+		position: relative;
+		width: fit-content;
+		transition: 0.5s ease all;
+		display: inline-flex;
+		border-radius: 100px;
+
+		align-items: center;
+		background-color: transparent;
+		border: 2px solid $c-primary;
+		color: $c-primary;
+
+		&:hover {
+			border: 2px solid $c-primary;
+			background: $c-primary;
+			color: $c-white;
+			text-decoration: none;
+		}
+
+		&:active {
+		}
+		&:focus {
+		}
+	}
+}
+
 div.wpforms-container-full button[type="submit"] {
 	background-color: $c-primary !important;
 	&:hover {

@@ -403,80 +403,34 @@
   display: none !important;
 }
 
-/* 
-
+/* Archivo (Reguläre Schrift) */
 @font-face {
-	font-family: $f-font;
-	font-weight: 400;
-	font-style: normal;
-	src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/new-zen/New_Zen_Regular.otf") format("opentype");
+  font-family: "Archivo";
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/Archivo-Regular.ttf") format("truetype");
 }
-
+/* Spectral (Reguläre Schrift) */
 @font-face {
-	font-family: $f-font;
-	font-weight: 400;
-	font-style: italic;
-	src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/new-zen/New_Zen_Regular_Italic.otf") format("opentype");
+  font-family: "Spectral";
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/Spectral-Regular.ttf") format("truetype");
 }
-
+/* Roboto Mono (Variable Font mit vollem Gewichtsbereich) */
 @font-face {
-	font-family: $f-font;
-	font-weight: 300;
-	font-style: normal;
-	src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/new-zen/New_Zen_Light.otf") format("opentype");
+  font-family: "Roboto Mono";
+  font-weight: 100 700;
+  font-style: normal;
+  src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
 }
-
+/* Roboto Mono (Kursiv, falls vorhanden) */
 @font-face {
-	font-family: $f-font;
-	font-weight: 300;
-	font-style: italic;
-	src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/new-zen/New_Zen_Light_Italic.otf") format("opentype");
+  font-family: "Roboto Mono";
+  font-weight: 100 700;
+  font-style: italic;
+  src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
 }
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 500;
-	font-style: normal;
-	src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/new-zen/New_Zen_Medium.otf") format("opentype");
-}
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 500;
-	font-style: italic;
-	src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/new-zen/New_Zen_Medium_Italic.otf") format("opentype");
-}
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 700;
-	font-style: normal;
-	src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/new-zen/New_Zen_Bold.otf") format("opentype");
-}
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 700;
-	font-style: italic;
-	src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/new-zen/New_Zen_Bold_Italic.otf") format("opentype");
-}
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 100;
-	font-style: normal;
-	src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/new-zen/New_Zen_Thin.otf") format("opentype");
-}
-
-@font-face {
-	font-family: $f-font;
-	font-weight: 100;
-	font-style: italic;
-	src: url("https://example.de/wp-content/themes/childtheme/assets/fonts/new-zen/New_Zen_Thin_Italic.otf") format("opentype");
-}
-
-
-*/
 body {
   font-size: 18px;
   color: #363636;
@@ -489,6 +443,24 @@ input,
 select,
 textarea {
   font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-family: var(--gp-font--archivo);
+}
+
+h2 {
+  font-family: var(--gp-font--spectral);
+}
+
+h3,
+h4 {
+  font-family: var(--gp-font--archivo);
+}
+
+a,
+p {
+  font-family: var(--gp-font--archivo);
 }
 
 p {
@@ -949,6 +921,11 @@ object {
   -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: rightbot;
+  font-size: 28px;
+}
+.site-footer .grid .item-4 p,
+.site-footer .grid .item-4 a {
+  font-size: 28px;
 }
 @media (max-width: 576px) {
   .site-footer .grid {
@@ -1773,6 +1750,18 @@ s .d-flex-wrap-justify-spacearound {
   margin-right: 400px;
 }
 
+.collection-wrapper .button-container {
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.product > div {
+  flex: 1;
+}
+
 #contact-popup {
   background-color: #ff694a;
   display: flex;
@@ -2161,6 +2150,27 @@ body button.gb-block-is-current:focus {
   }
 }
 
+body button--shop,
+body .gb-button--shop {
+  display: flow-root;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: 0.5s ease all;
+  display: inline-flex;
+  border-radius: 100px;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #ff694a;
+  color: #ff694a;
+}
+body button--shop:hover,
+body .gb-button--shop:hover {
+  border: 2px solid #ff694a;
+  background: #ff694a;
+  color: #fff;
+  text-decoration: none;
+}
 div.wpforms-container-full button[type=submit] {
   background-color: #ff694a !important;
 }

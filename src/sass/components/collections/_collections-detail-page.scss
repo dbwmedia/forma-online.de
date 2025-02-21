@@ -1,0 +1,9 @@
+@use "../../global" as *;
+
+.product {
+	display: flex;
+	flex-direction: row-reverse;
+	> div {
+		flex: 1;
+	}
+}
