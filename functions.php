@@ -17,8 +17,9 @@ require_once get_stylesheet_directory() . '/includes/dbw/dbw-head.php';
 // Font Awesome
 require_once get_stylesheet_directory() . '/includes/fontawesome-enqueue.php';
  
-// WooCommerce Gutenberg Erweiterung
-require_once get_stylesheet_directory() . '/includes/woocommerce/dbw-woocommerce-gutenberg.php';
+// WooCommerce Erweiterung
+//require_once get_stylesheet_directory() . '/includes/woocommerce/dbw-woocommerce-gutenberg.php';
+require_once get_stylesheet_directory() . '/includes/woocommerce/dbw-woocommerce-detailpage.php';
 
 //------------------------------------------------
 // # returns meta and favicon
@@ -28,7 +29,7 @@ function headers() {
     echo '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">';
     echo '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">';
     echo '<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">';
-    echo '<link rel="manifest" href="/site.webmanifest">';
+    echo '<link rel="manifest" href="/sites.webmanifest">';
     echo '<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f2354e">';
     echo '<meta name="msapplication-TileColor" content="#333333">';
     echo '<meta name="theme-color" content="#ffffff">';

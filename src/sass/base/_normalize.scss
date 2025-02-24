@@ -1,6 +1,5 @@
 @use "../global" as *;
 
-
 //--------------------------------------------------------------
 // # Page Einstellungen
 //--------------------------------------------------------------
@@ -29,7 +28,10 @@
 
 				& > * {
 					&:not(.gb-container--content__fullwidth) {
-						@include containerWrap;
+						// Überprüfen, ob der Body NICHT die Klasse "full-width-content" hat
+						body:not(.full-width-content) & {
+							@include containerWrap;
+						}
 					}
 				}
 			}
@@ -40,7 +42,6 @@
 		}
 	}
 }
-
 .container {
 	position: relative;
 	max-width: 1600px;

@@ -1,9 +1,69 @@
 @use "../../global" as *;
 
-.product {
+.dbw-custom-product-container .product {
 	display: flex;
 	flex-direction: row-reverse;
 	> div {
-		flex: 1;
 	}
+
+	.dbw-product-gallery {
+		display: flex;
+		flex-direction: column;
+
+		.dbw-product-image {
+			width: 100%;
+			img {
+				min-width: 100%;
+			}
+		}
+	}
+
+	.summary {
+		border-top: $b-border;
+		flex: 1;
+		position: sticky;
+		top: 150px;
+		max-height: calc(100vh - 50px);
+		overflow: auto;
+		padding: 50px 0% 50px 0;
+		margin: 0 3%;
+
+		.dbw-product-attributes {
+			display: none;
+		}
+
+		.dbw-product-info-container {
+			h3 {
+				display: none;
+			}
+		}
+
+		.variations_form {
+			.variations {
+				tbody {
+					display: flex;
+					tr {
+						display: flex;
+						flex-direction: column;
+						th {
+							text-align: left;
+						}
+					}
+				}
+			}
+		}
+		.woocommerce-variation-add-to-cart {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		.product_meta {
+			display: none;
+		}
+	}
+}
+
+.woocommerce-breadcrumb {
+	display: none;
 }

@@ -611,7 +611,7 @@ mark,
 #content .site-main .inside-article {
   padding: 0;
 }
-#content .site-main .inside-article .entry-content > *:not(.gb-container--content__fullwidth) {
+body:not(.full-width-content) #content .site-main .inside-article .entry-content > *:not(.gb-container--content__fullwidth) {
   width: 80%;
   max-width: 1800px;
   margin-inline: auto;
@@ -1754,12 +1754,57 @@ s .d-flex-wrap-justify-spacearound {
   justify-content: center;
 }
 
-.product {
+.dbw-custom-product-container .product {
   display: flex;
   flex-direction: row-reverse;
 }
-.product > div {
+.dbw-custom-product-container .product .dbw-product-gallery {
+  display: flex;
+  flex-direction: column;
+}
+.dbw-custom-product-container .product .dbw-product-gallery .dbw-product-image {
+  width: 100%;
+}
+.dbw-custom-product-container .product .dbw-product-gallery .dbw-product-image img {
+  min-width: 100%;
+}
+.dbw-custom-product-container .product .summary {
+  border-top: 2px solid rgba(0, 0, 0, 0.3);
   flex: 1;
+  position: sticky;
+  top: 150px;
+  max-height: calc(100vh - 50px);
+  overflow: auto;
+  padding: 50px 0 50px 0%;
+  margin: 0 3%;
+}
+.dbw-custom-product-container .product .summary .dbw-product-attributes {
+  display: none;
+}
+.dbw-custom-product-container .product .summary .dbw-product-info-container h3 {
+  display: none;
+}
+.dbw-custom-product-container .product .summary .variations_form .variations tbody {
+  display: flex;
+}
+.dbw-custom-product-container .product .summary .variations_form .variations tbody tr {
+  display: flex;
+  flex-direction: column;
+}
+.dbw-custom-product-container .product .summary .variations_form .variations tbody tr th {
+  text-align: right;
+}
+.dbw-custom-product-container .product .summary .woocommerce-variation-add-to-cart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dbw-custom-product-container .product .summary .product_meta {
+  display: none;
+}
+
+.woocommerce-breadcrumb {
+  display: none;
 }
 
 #contact-popup {
@@ -2151,7 +2196,8 @@ body button.gb-block-is-current:focus {
 }
 
 body button--shop,
-body .gb-button--shop {
+body .gb-button--shop,
+body button.single_add_to_cart_button--shop {
   display: flow-root;
   position: relative;
   width: -moz-fit-content;
@@ -2165,12 +2211,64 @@ body .gb-button--shop {
   color: #ff694a;
 }
 body button--shop:hover,
-body .gb-button--shop:hover {
+body .gb-button--shop:hover,
+body button.single_add_to_cart_button--shop:hover {
   border: 2px solid #ff694a;
   background: #ff694a;
   color: #fff;
   text-decoration: none;
 }
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt {
+  display: flow-root;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: 0.5s ease all;
+  display: inline-flex;
+  border-radius: 100px;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #ff694a;
+  color: #ff694a;
+}
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt:hover {
+  border: 2px solid #ff694a;
+  background: #ff694a;
+  color: #fff;
+  text-decoration: none;
+}
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) #respond input#submit.alt,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) a.button.alt,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) button.button.alt,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) input.button.alt {
+  display: flow-root;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: 0.5s ease all;
+  display: inline-flex;
+  border-radius: 100px;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #ff694a;
+  color: #ff694a;
+}
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) #respond input#submit.alt:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) a.button.alt:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) button.button.alt:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) input.button.alt:hover {
+  border: 2px solid #ff694a;
+  background: #ff694a;
+  color: #fff;
+  text-decoration: none;
+}
+
 div.wpforms-container-full button[type=submit] {
   background-color: #ff694a !important;
 }
