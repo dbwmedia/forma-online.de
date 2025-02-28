@@ -1,4 +1,5 @@
 @use "../global" as *;
+@use "sass:color";
 
 body .gb-button,
 body a.gb-button,
@@ -148,29 +149,49 @@ body button,
 body .gb-button,
 body button.single_add_to_cart_button {
 	&--shop {
-		display: flow-root;
+		display: inline-flex;
 		position: relative;
 		width: fit-content;
-		transition: 0.5s ease all;
-		display: inline-flex;
+		transition: 0.3s ease-in-out all;
 		border-radius: 100px;
-
 		align-items: center;
-		background-color: transparent;
-		border: 2px solid $c-primary;
-		color: $c-primary;
+		justify-content: center;
+		text-decoration: none;
 
+		// Standard (keine Theme-Farben!)
+		background-color: transparent !important;
+		border: 2px solid $c-primary !important;
+		color: $c-primary !important;
+
+		// Hover-Zustand
 		&:hover {
-			border: 2px solid $c-primary;
-			background: $c-primary;
-			color: $c-white;
-			text-decoration: none;
+			border-color: $c-primary !important;
+			background: $c-primary !important;
+			color: $c-white !important;
 		}
 
-		&:active {
-		}
+		// Fokus-Zustand (Verhindert Theme-Box-Shadows oder Farben)
 		&:focus {
+			outline: none !important;
+			box-shadow: 0 0 0 3px rgba($c-primary, 0.3) !important;
+			background: $c-primary !important;
+			color: $c-white !important;
 		}
+
+		// Active-Zustand (Sorgt für leichtes Feedback)
+		&:active {
+			transform: scale(0.98);
+			background: $c-primary !important;
+			border: 2px solid $c-primary !important;
+			color: $c-white !important;
+		}
+	}
+	// Disabled-Zustand (WooCommerce-kompatibel)
+	&.disabled,
+	&:disabled,
+	&[disabled],
+	&.wc-variation-selection-needed {
+		background: $c-primary !important;
 	}
 }
 

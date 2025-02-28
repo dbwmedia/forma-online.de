@@ -90,6 +90,8 @@ $borderRadiusL: 64px;
 $f-font: "Arial";
 $f-weight: 500;
 $f-sizeBody: 18px;
+$f-sizeBodySmall: 12px;
+$f-sizeBodyMedium: 14px;
 
 //--------------------------------------------------------------
 // # Breakpoints
@@ -117,7 +119,7 @@ $containerPad: 10%;
 //--------------------------------------------------------------
 
 $themeName: "childtheme";
-$themePath: "https://example.de/wp-content/themes/#{$themeName}/"; // todo: tbc
+$themePath: "https://wolter.dbw-development.de/wp-content/themes/#{$themeName}/"; // todo: tbc
 
 $assetsPath: "#{$themePath}assets/";
 $fontsPath: "#{$assetsPath}fonts/";

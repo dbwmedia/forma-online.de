@@ -15,7 +15,25 @@ function dbw_customize_woocommerce_gallery() {
 add_action('after_setup_theme', 'dbw_customize_woocommerce_gallery');
 
 /**
- * Eigene WooCommerce-Bildergalerie: Hauptbild bleibt als erstes Bild in der Galerie.
+ * Titelbild separat rendern (nur für Responsive)
+ */
+function dbw_render_product_title_image() {
+    global $product;
+
+    if (!$product) return;
+
+    $main_image_id = get_post_thumbnail_id();
+
+    if ($main_image_id) {
+        echo '<div class="dbw-product-title-image">';
+        echo wp_get_attachment_image($main_image_id, 'full');
+        echo '</div>';
+    }
+}
+add_action('woocommerce_before_single_product_summary', 'dbw_render_product_title_image', 10);
+
+/**
+ * Eigene WooCommerce-Bildergalerie: Hauptbild als erstes Bild der Galerie (Desktop)
  */
 function dbw_custom_product_gallery() {
     global $product;
@@ -47,12 +65,12 @@ function dbw_custom_product_gallery() {
 }
 
 /**
- * WooCommerce Galerie überschreiben und das Standardbild entfernen.
+ * WooCommerce Galerie überschreiben
  */
 function dbw_override_wc_gallery() {
     remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20);
     remove_action('woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20);
-    add_action('woocommerce_before_single_product_summary', 'dbw_custom_product_gallery', 20);
+    add_action('woocommerce_before_single_product_summary', 'dbw_custom_product_gallery', 30);
 }
 add_action('wp', 'dbw_override_wc_gallery');
 

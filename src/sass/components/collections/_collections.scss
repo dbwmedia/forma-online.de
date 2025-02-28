@@ -4,6 +4,26 @@
 	.collections-list {
 		ul {
 			margin-left: 400px;
+
+			li {
+				.content {
+					position: relative;
+
+					h2 {
+						color: $c-headline;
+						font-size: 28px;
+						a {
+							color: $c-headline;
+						}
+					}
+
+					.price {
+						position: absolute;
+						top: 0;
+						right: 0;
+					}
+				}
+			}
 		}
 	}
 }
