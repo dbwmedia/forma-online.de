@@ -90,8 +90,9 @@ $borderRadiusL: 64px;
 $f-font: "Arial";
 $f-weight: 500;
 $f-sizeBody: 18px;
-$f-sizeBodySmall: 12px;
-$f-sizeBodyMedium: 14px;
+$f-sizeBodySmall: 14px;
+$f-sizeBodyMedium: 22px;
+$f-sizeBodyLarge: 26px;
 
 //--------------------------------------------------------------
 // # Breakpoints
@@ -102,6 +103,7 @@ $tablet: 768px; // sm
 $phablet: 992px; // md
 $desktop: 1024px; // lg
 $laptop: 1200px; // xl
+$laptop-xl: 1370px; // xl
 $wide: 1440px; // xxl
 
 //--------------------------------------------------------------

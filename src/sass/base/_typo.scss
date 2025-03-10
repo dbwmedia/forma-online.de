@@ -34,12 +34,25 @@ p {
 	font-family: var(--gp-font--archivo);
 }
 
-p {
+p,
+.p {
 	margin-bottom: 0.8em;
 	font-size: $f-sizeBody;
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+
+	&-size-s {
+		font-size: $f-sizeBodySmall;
+	}
+
+	&-size-m {
+		font-size: $f-sizeBodyMedium;
+	}
+
+	&-size-l {
+		font-size: $f-sizeBodyLarge;
 	}
 }
 

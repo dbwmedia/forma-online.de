@@ -252,4 +252,23 @@
 	.slick-prev {
 		display: none !important;
 	}
+
+	.slick-slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		figure {
+			width: 100%;
+			aspect-ratio: 2 / 1;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				aspect-ratio: 2 / 1;
+			}
+		}
+	}
 }

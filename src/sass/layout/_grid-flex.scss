@@ -89,7 +89,8 @@
 	flex-wrap: wrap;
 	gap: 10px;
 }
-s .d-flex-wrap-justify-spacearound {
+
+.d-flex-wrap-justify-spacearound {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
@@ -211,7 +212,9 @@ s .d-flex-wrap-justify-spacearound {
 
 .grid-featured-three {
 	display: grid !important;
-	grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(220px, 280px);
+	width: 80%; // Setzt die Breite auf 80% des Elterncontainers
+	margin: 0 auto; // Zentriert das Grid innerhalb des Elterncontainers
+	grid-template-columns: repeat(3, 1fr);
 	gap: $gap-s;
 
 	> div {
@@ -223,10 +226,12 @@ s .d-flex-wrap-justify-spacearound {
 	/* Breakpoint Settings */
 
 	@include mq($until: $laptop) {
+		width: 90%; // Kann bei schmaleren Viewports mehr Breite nutzen, falls gewünscht
 		grid-template-columns: repeat(2, 1fr);
 	}
 
 	@include mq($until: $tablet) {
+		width: 100%; // Nutzt die volle Breite auf kleineren Geräten für bessere UX
 		grid-template-columns: repeat(1, 1fr);
 
 		> div {
@@ -237,7 +242,6 @@ s .d-flex-wrap-justify-spacearound {
 		}
 	}
 }
-
 .grid-eight-four {
 	display: grid;
 	grid-template-columns: 8fr 4fr; // Linke Spalte 8/12, rechte Spalte 4/12

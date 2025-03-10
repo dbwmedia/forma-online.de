@@ -45,6 +45,9 @@
 		top: 5%;
 		right: 2%;
 		background-color: transparent;
+		svg {
+			pointer-events: none;
+		}
 	}
 
 	&.open {

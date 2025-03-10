@@ -16,7 +16,10 @@ const Slick = () => {
 		autoplaySpeed: 0,
 		speed: 12500,
 		cssEase: "linear",
-		variableWidth: true,
+		variableWidth: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		adaptiveHeight: false,
 	});
 
 	// Collection-Slider (läuft als Band)

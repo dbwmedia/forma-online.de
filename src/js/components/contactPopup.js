@@ -16,10 +16,7 @@ const Component_ContactPopup = () => {
 
 		// Schließen des Popups bei Klick auf den Schließen-Button oder außerhalb des Popups
 		popup.addEventListener("click", (event) => {
-			if (
-				event.target === popup ||
-				event.target.classList.contains("close-popup")
-			) {
+			if (event.target === popup || event.target.closest(".close-popup")) {
 				popup.classList.remove("open");
 			}
 		});

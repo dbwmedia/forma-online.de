@@ -29,7 +29,7 @@ const Component_ContactPopup = () => {
 
     // Schließen des Popups bei Klick auf den Schließen-Button oder außerhalb des Popups
     popup.addEventListener("click", event => {
-      if (event.target === popup || event.target.classList.contains("close-popup")) {
+      if (event.target === popup || event.target.closest(".close-popup")) {
         popup.classList.remove("open");
       }
     });
@@ -129,7 +129,10 @@ const Slick = () => {
     autoplaySpeed: 0,
     speed: 12500,
     cssEase: "linear",
-    variableWidth: true
+    variableWidth: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: false
   });
 
   // Collection-Slider (läuft als Band)

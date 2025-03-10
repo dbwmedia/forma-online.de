@@ -6,12 +6,31 @@
 			margin-left: 400px;
 
 			li {
+				.wc-block-components-product-image {
+					position: relative;
+					width: 100%;
+					aspect-ratio: 1 / 1.5;
+					overflow: hidden;
+
+					a {
+						display: block;
+						width: 100%;
+						height: 100%;
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+				}
+
 				.content {
 					position: relative;
 
 					h2 {
 						color: $c-headline;
 						font-size: 28px;
+
 						a {
 							color: $c-headline;
 						}
@@ -29,7 +48,12 @@
 }
 
 .collection-wrapper {
-	.button-container {
-		justify-content: center;
+	.collections-list {
+		display: flex;
+		.button-container {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 }
