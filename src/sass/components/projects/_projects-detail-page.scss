@@ -59,6 +59,13 @@
 	}
 }
 
+.project-detail-wrapper-end {
+	img {
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+	}
+}
+
 // Zitat-Block
 .product-quote {
 	text-align: center;

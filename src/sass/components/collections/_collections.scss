@@ -50,6 +50,7 @@
 .collection-wrapper {
 	.collections-list {
 		display: flex;
+		justify-content: space-between;
 		.button-container {
 			display: inline-flex;
 			align-items: center;

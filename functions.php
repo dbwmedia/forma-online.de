@@ -20,6 +20,7 @@ require_once get_stylesheet_directory() . '/includes/fontawesome-enqueue.php';
 // WooCommerce Erweiterung
 //require_once get_stylesheet_directory() . '/includes/woocommerce/dbw-woocommerce-gutenberg.php';
 require_once get_stylesheet_directory() . '/includes/woocommerce/dbw-woocommerce-detailpage.php';
+require_once get_stylesheet_directory() . '/includes/woocommerce/dbw-woocommerce-coming-soon.php';
 
 //------------------------------------------------
 // # returns meta and favicon
@@ -57,3 +58,5 @@ function custom_math_captcha_validation($result, $tag) {
     return $result;
 }
 add_filter('wpcf7_validate_text*', 'custom_math_captcha_validation', 20, 2);
+
+

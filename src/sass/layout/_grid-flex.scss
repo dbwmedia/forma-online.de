@@ -213,7 +213,6 @@
 .grid-featured-three {
 	display: grid !important;
 	width: 80%; // Setzt die Breite auf 80% des Elterncontainers
-	margin: 0 auto; // Zentriert das Grid innerhalb des Elterncontainers
 	grid-template-columns: repeat(3, 1fr);
 	gap: $gap-s;
 

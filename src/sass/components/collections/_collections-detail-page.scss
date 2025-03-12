@@ -232,6 +232,17 @@
 	}
 }
 
+.product_cat-coming-soon {
+	.wc-coming-soon-notice {
+		order: 3;
+	}
+
+	.coming-soon-contact {
+		font-size: 20px;
+		order: 6;
+	}
+}
+
 .woocommerce-breadcrumb {
 	display: none;
 }

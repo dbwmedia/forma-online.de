@@ -573,6 +573,7 @@ h3 {
   font-size: clamp(24px, 5vmin, 32px);
   line-height: 1.05;
   font-weight: bold;
+  margin-bottom: 15px;
 }
 
 h4 {
@@ -1274,7 +1275,6 @@ object {
 .grid-featured-three {
   display: grid !important;
   width: 80%;
-  margin: 0 auto;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   /* Breakpoint Settings */
@@ -1722,6 +1722,10 @@ object {
   -ms-grid-column: 1;
   text-align: center;
   grid-area: leftbot;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery-looper .gallery-item {
@@ -1782,6 +1786,12 @@ object {
      object-fit: cover;
 }
 
+.project-detail-wrapper-end img {
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .product-quote {
   text-align: center;
   margin: 75px 0;
@@ -1793,6 +1803,10 @@ object {
   padding: 3em 0;
   text-align: left;
   margin-bottom: 0;
+}
+
+section.projects-overview-page-grid {
+  gap: clamp(45px, 5vmin, 75px);
 }
 
 .collection-overview .collections-list ul {
@@ -1833,6 +1847,7 @@ object {
 
 .collection-wrapper .collections-list {
   display: flex;
+  justify-content: space-between;
 }
 .collection-wrapper .collections-list .button-container {
   display: inline-flex;
@@ -2033,6 +2048,14 @@ object {
   }
 }
 
+.product_cat-coming-soon .wc-coming-soon-notice {
+  order: 3;
+}
+.product_cat-coming-soon .coming-soon-contact {
+  font-size: 20px;
+  order: 6;
+}
+
 .woocommerce-breadcrumb {
   display: none;
 }
@@ -2223,6 +2246,61 @@ object {
 }
 .contact-person .grid .content p {
   margin-bottom: 0;
+}
+
+.coming-soon-label {
+  background: #ff694a;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 0 20px 0;
+}
+
+.wc-coming-soon-notice {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.coming-soon-contact {
+  margin: 10px 0;
+  font-size: 16px;
+}
+.coming-soon-contact .popup-trigger {
+  display: inline-block;
+}
+.coming-soon-contact .popup-trigger a {
+  color: ea2b1f;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.coming-soon-contact .popup-trigger a:hover {
+  text-decoration: none;
+}
+
+.dbw-variations-info {
+  margin-top: 20px;
+}
+.dbw-variations-info h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.dbw-variations-info .dbw-variations-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.dbw-variations-info .dbw-variation-attribute {
+  margin-bottom: 10px;
+  padding: 8px 0;
+}
+.dbw-variations-info .dbw-variation-attribute strong {
+  font-weight: bold;
+  margin-right: 5px;
 }
 
 .hero-full {
