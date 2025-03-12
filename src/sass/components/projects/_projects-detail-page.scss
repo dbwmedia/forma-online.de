@@ -33,7 +33,7 @@
 		}
 		&--rev {
 			.gallery-grid {
-				direction: rtl; // Ändert die Reihenfolge der Bilder innerhalb des Grids
+				direction: ltr; // Ändert die Reihenfolge der Bilder innerhalb des Grids
 				.gallery-item {
 					direction: ltr; // Stellt sicher, dass der Inhalt in den Items nicht gespiegelt wird
 				}
