@@ -4,6 +4,7 @@
 	.collections-list {
 		ul {
 			margin-left: 400px;
+			row-gap: 75px;
 
 			li {
 				.wc-block-components-product-image {
@@ -51,10 +52,41 @@
 	.collections-list {
 		display: flex;
 		justify-content: space-between;
+		.grid-featured-three {
+			.product {
+				h4 {
+					margin-bottom: 10px;
+					margin-top: 20px;
+					a {
+						@include no-link-color;
+					}
+				}
+			}
+		}
+
 		.button-container {
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
+		}
+	}
+
+	@include mq($until: $laptop) {
+		.collections-list {
+			flex-direction: column;
+			.grid-featured-three {
+				width: 100%;
+				.product {
+					h4 {
+						a {
+						}
+					}
+				}
+
+				.button-container {
+					margin: $grid-gap 0;
+				}
+			}
 		}
 	}
 }

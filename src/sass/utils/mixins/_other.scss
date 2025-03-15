@@ -1,0 +1,11 @@
+@use "../variables" as *;
+
+@mixin no-link-color() {
+	color: $c-body;
+	transition: color 0.3s ease;
+
+	&:hover {
+		color: $c-body;
+		text-decoration: none;
+	}
+}

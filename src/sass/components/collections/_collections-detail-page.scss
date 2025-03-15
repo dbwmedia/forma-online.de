@@ -36,7 +36,7 @@
 			max-height: calc(100vh - 50px);
 			overflow: auto;
 			padding: 50px 0;
-			margin: 0 3%;
+			margin: 0 $contentPadding;
 			display: flex;
 			flex-direction: column;
 
@@ -111,7 +111,8 @@
 
 							th.label {
 								font-weight: bold;
-								font-size: $f-sizeBodyMedium;
+								font-size: $f-sizeBodySmall;
+								text-transform: uppercase;
 							}
 							td.value {
 								position: relative;
@@ -121,7 +122,7 @@
 									padding: 5px;
 									cursor: pointer;
 									width: 100%;
-									font-size: $f-sizeBodyMedium;
+									font-size: $f-sizeBody;
 									appearance: none;
 									position: relative;
 								}
@@ -194,7 +195,7 @@
 		}
 
 		// Mobile-Layout (unter 1200px)
-		@media (max-width: 1200px) {
+		@media (max-width: $laptop) {
 			flex-direction: column; // Vertikale Anordnung
 			flex-wrap: wrap;
 
@@ -202,16 +203,17 @@
 				display: block; // Titelbild separat anzeigen
 				order: 1;
 				img {
-					aspect-ratio: 1;
+					aspect-ratio: unset;
 					object-fit: cover;
 				}
 			}
 
 			.summary {
+				border-top: none;
 				max-height: fit-content;
 				display: block;
-				margin: 0;
-				padding: 5% 3%;
+				margin: 5% $contentPaddingLaptop;
+				padding: 0;
 				order: 2;
 				width: 100% !important;
 				min-height: 100%;
@@ -227,6 +229,12 @@
 				.dbw-product-image:first-child {
 					display: none; // Hauptbild in der Galerie ausblenden, da separat oben
 				}
+			}
+		}
+
+		@media (max-width: $mobile) {
+			.summary {
+				margin: 5% $contentPaddingMobile;
 			}
 		}
 	}

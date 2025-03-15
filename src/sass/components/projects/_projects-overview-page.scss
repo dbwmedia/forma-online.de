@@ -2,4 +2,8 @@
 
 section.projects-overview-page-grid {
 	gap: $grid-gap;
+
+	a {
+		color: $c-body;
+	}
 }

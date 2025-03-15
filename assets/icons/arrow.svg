@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.52 63.52">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Grafik">
+    <g transform="translate(5, 5)">
+      <circle class="cls-1" cx="26.76" cy="26.76" r="26.26"/>
+      <polyline class="cls-1" points="22.58 16.04 33.3 26.76 22.58 37.48"/>
+    </g>
+  </g>
+</svg>

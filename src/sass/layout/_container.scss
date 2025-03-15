@@ -7,13 +7,13 @@
 
 	&--content__fullwidth {
 		width: 100%;
-		padding: 50px 3%;
+		padding: 50px $contentPadding;
 		@media (max-width: $laptop) {
-			padding: 30px 3%;
+			padding: 30px $contentPaddingLaptop;
 		}
 
 		@media (max-width: $mobile) {
-			padding: 30px 3%;
+			padding: 30px $contentPaddingMobile;
 		}
 
 		& > * {

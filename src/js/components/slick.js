@@ -13,13 +13,16 @@ const Slick = () => {
 		autoplay: true,
 		pauseOnHover: false,
 		useTransform: false,
-		autoplaySpeed: 0,
-		speed: 12500,
-		cssEase: "linear",
-		variableWidth: false,
-		slidesToShow: 1,
+		autoplaySpeed: 2000, // Wechselt alle 2 Sekunden zum nächsten Slide
+		speed: 300, // Übergangsgeschwindigkeit zwischen den Slides
+		cssEase: "ease", // Sanfterer Übergang statt linear
+		variableWidth: false, // Wichtig: false, damit die Slides einheitliche Breite haben
+		slidesToShow: 1, // Nur ein Slide vollständig anzeigen
 		slidesToScroll: 1,
 		adaptiveHeight: false,
+		centerMode: false, // Kein centerMode
+		rtl: false, // Nicht rechts-nach-links
+		swipeToSlide: true, // Erlaubt Swipen zur Navigation
 	});
 
 	// Collection-Slider (läuft als Band)

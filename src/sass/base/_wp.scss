@@ -175,6 +175,7 @@ table {
 }
 
 //--------------------------------------------------------------
+
 // # Media
 //--------------------------------------------------------------
 
@@ -193,4 +194,30 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+//--------------------------------------------------------------
+// GenerateBlocks 2 Link Fix
+//--------------------------------------------------------------
+.stretch-link {
+	position: relative;
+
+	a {
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			cursor: pointer; /* <- Hier hinzufügen */
+		}
+
+		&:is(:focus-visible) {
+			&::after {
+				outline: 2px solid;
+			}
+		}
+
+		&:is(:hover, :focus) {
+			outline: none;
+		}
+	}
 }

@@ -54,7 +54,7 @@ $b-padding: 15px 30px;
 $b-borderWidth: 1px;
 $b-borderStyle: solid;
 $b-borderRadius: 0;
-$b-border: 2px solid rgba(0, 0, 0, 0.3);
+$b-border: 1px solid rgba(0, 0, 0, 1);
 
 $button-primary: linear-gradient(90deg, $c-primary, $c-primary-hover) border-box;
 $button-secondary: linear-gradient(90deg, $c-secondary, $c-secondary-hover)
@@ -63,6 +63,14 @@ $button-secondary: linear-gradient(90deg, $c-secondary, $c-secondary-hover)
 $button-accent: linear-gradient(90deg, $c-accent, $c-accent-hover) border-box;
 
 $c-primary-hover: $c-primary-hover;
+
+//--------------------------------------------------------------
+// # Content Padding
+//--------------------------------------------------------------
+
+$contentPadding: 6%;
+$contentPaddingLaptop: 5%;
+$contentPaddingMobile: 4%;
 
 //--------------------------------------------------------------
 // # Padding Mixin mit Default-Werten
@@ -90,10 +98,10 @@ $borderRadiusL: 64px;
 
 $f-font: "Arial";
 $f-weight: 500;
-$f-sizeBody: 18px;
-$f-sizeBodySmall: 14px;
-$f-sizeBodyMedium: 22px;
-$f-sizeBodyLarge: 26px;
+$f-sizeBody: clamp(14px, 3.5vmin, 18px);
+$f-sizeBodySmall: clamp(12px, 3.5vmin, 14px);
+$f-sizeBodyMedium: clamp(18px, 3.5vmin, 22px);
+$f-sizeBodyLarge: clamp(22px, 3.5vmin, 26px);
 
 //--------------------------------------------------------------
 // # Breakpoints

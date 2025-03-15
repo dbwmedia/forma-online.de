@@ -63,3 +63,23 @@
 		}
 	}
 }
+
+.with-empty-cart-icon {
+	&::before {
+		display: none !important;
+	}
+}
+
+.woo-checkout-wrapper {
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.wp-block-woocommerce-cart {
+		margin-left: initial;
+		width: auto; /* oder width: initial !important; */
+		max-width: none;
+		display: block;
+		min-width: 100%;
+	}
+}

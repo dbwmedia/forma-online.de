@@ -8,15 +8,19 @@
 	z-index: 999;
 	background-color: $c-white;
 	transition: $t-transition;
+	padding: 0 $contentPadding;
 
 	.inside-header {
 		color: $c-black;
 		max-width: $containerMaxWidth;
-		padding: 20px 0;
+		padding: 10px 0;
 
 		.menu-toggle {
 			background-color: transparent;
-			color: $c-white;
+			color: $c-body;
+		}
+
+		.site-logo {
 		}
 
 		.gb-button.project {
@@ -30,41 +34,104 @@
 	.main-navigation ul {
 		li {
 			background-color: transparent;
+
 			a {
 				font-size: $f-sizeBody;
 				color: $c-black;
-
+				padding: 0;
+				margin: 0 10px;
+				position: relative; // WICHTIG für das absolute Positioning des ::after
 				transition: $t-transition;
+
+				&::after {
+					content: "";
+					position: absolute;
+					left: 0;
+					bottom: 10px; // Abstand zum Text
+					width: 100%;
+					height: 1px;
+					background-color: $c-primary;
+					transform: scaleX(0); // Standard: Unsichtbar
+					transition: transform 0.3s ease-in-out;
+				}
+
 				&:hover {
-					text-decoration: underline;
-					color: $c-primary !important;
+					color: $c-primary;
+				}
+
+				&,
+				&:hover,
+				&:focus,
+				&:active,
+				&:visited {
+					text-decoration: none !important; // Entfernt ALLE möglichen Fälle
+				}
+
+				&:hover::after {
+					transform: scaleX(1); // Sichtbar auf Hover
 				}
 			}
 
 			&.current-menu-item {
-				color: initial;
 				a {
-					color: $c-black;
-					&:hover {
-						text-decoration: underline;
-						color: $c-primary !important;
+					color: $c-primary; // Aktive Seite färben
+					text-decoration: none;
+
+					&::after {
+						transform: scaleX(1); // Immer sichtbar bei aktivem Menüpunkt
 					}
 				}
 			}
 
-			&:last-child {
-				a {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					width: 40px;
-					height: 40px;
-					background: url("#{$iconsPath}shopping-cart.svg") no-repeat center;
-					background-size: contain;
-					text-indent: -9999px;
-					overflow: hidden;
-					margin-bottom: 10px;
+			&:last-child a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 40px;
+				height: 40px;
+				margin-right: 0;
+				mask-image: url("#{$iconsPath}shopping-cart.svg");
+				mask-repeat: no-repeat;
+				mask-position: center;
+				mask-size: contain;
+				background-color: $c-black; // Standardfarbe
+				text-indent: -9999px;
+				overflow: hidden;
+				margin-bottom: 10px;
+
+				&::after {
+					display: none; // Hier wird das ::after Element komplett deaktiviert
 				}
+
+				&:hover::after {
+					transform: scaleX(
+						0
+					); // Oder alternativ: keine Transformation beim Hover
+				}
+			}
+
+			&:last-child.current-menu-item a {
+				background-color: #ff694a; // Deine Primärfarbe für aktiven Zustand
+			}
+		}
+	}
+
+	@media (max-width: $laptop) {
+		padding: 0px $contentPaddingLaptop;
+	}
+
+	@media (max-width: $mobile) {
+		.inside-header {
+			.menu-toggle {
+			}
+
+			.site-logo {
+				.header-image {
+					width: 70px;
+				}
+			}
+
+			.gb-button.project {
 			}
 		}
 	}
@@ -73,11 +140,10 @@
 #generate-slideout-menu {
 	//background-color: $c-black;
 
-	background: rgb(34 34 34 / 50%);
-	backdrop-filter: blur(30px);
+	background: $c-white;
 	box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.2);
 
-	color: $c-white;
+	color: $c-body;
 	padding: 50px 30px 0;
 	width: 90vw;
 
@@ -89,16 +155,43 @@
 		}
 
 		a {
-			color: $c-white;
+			color: $c-body;
 			font-size: 18px;
 		}
 	}
 
 	.slideout-exit svg {
-		fill: $c-white;
+		color: $c-body;
 	}
 
 	.gb-button.project {
-		color: $c-white;
+		color: $c-body;
 	}
+}
+
+.single-product {
+	.site-header {
+		.inside-header {
+			max-width: 100%;
+		}
+	}
+}
+
+.offside-js--interact .offside,
+.offside-js--interact .offside-sliding-element {
+	transition-timing-function: ease-out;
+}
+
+nav.offside--right {
+	left: auto;
+	right: calc(var(--gp-slideout-width) * -1.5);
+}
+
+nav.offside--right.is-open:not(.slideout-transition),
+nav.offside-js--is-right .offside-sliding-element {
+	transform: translate3d(
+		calc(var(--gp-slideout-width) * -1 - 20px),
+		0,
+		0
+	) !important;
 }

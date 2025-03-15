@@ -19,7 +19,8 @@
 			grid-area: lefttop;
 			img {
 				filter: invert(1);
-				height: 200px;
+				max-width: 150px;
+				height: auto;
 			}
 		}
 
@@ -34,11 +35,16 @@
 
 		.item-4 {
 			grid-area: rightbot;
-			p,
-			a {
-				font-size: 28px;
+			p {
+				font-size: 20px;
+				font-weight: bold;
+				gap: 0;
+				a {
+					font-size: 28px;
+					font-weight: normal;
+					margin-left: 10px;
+				}
 			}
-			font-size: 28px;
 		}
 
 		/* Breakpoint Settings */
