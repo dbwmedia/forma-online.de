@@ -27,7 +27,9 @@
 				//margin-top: $s-md;
 
 				& > * {
-					&:not(.gb-container--content__fullwidth) {
+					&:not(.gb-container--content__fullwidth):not(
+							.gb-container--content__fullwidth-narrow
+						) {
 						// Überprüfen, ob der Body NICHT die Klasse "full-width-content" hat
 						body:not(.full-width-content) & {
 							@include containerWrap;

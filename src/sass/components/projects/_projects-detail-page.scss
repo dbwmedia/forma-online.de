@@ -18,6 +18,15 @@
 				object-fit: cover;
 			}
 		}
+
+		// Media Query für kleinere Bildschirme
+		@media (max-width: $tablet) {
+			grid-template-columns: 1fr; // Ändert auf eine Spalte
+
+			.hero-img {
+				grid-column: 1; // Nur eine Spalte belegen
+			}
+		}
 	}
 
 	// Galerie-Bereich
@@ -81,5 +90,10 @@
 		padding: 3em 0;
 		text-align: left;
 		margin-bottom: 0;
+	}
+	@include mq($until: $tablet) {
+		.gb-text {
+			width: 100%;
+		}
 	}
 }

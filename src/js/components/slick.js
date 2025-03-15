@@ -13,16 +13,47 @@ const Slick = () => {
 		autoplay: true,
 		pauseOnHover: false,
 		useTransform: false,
-		autoplaySpeed: 2000, // Wechselt alle 2 Sekunden zum nächsten Slide
-		speed: 300, // Übergangsgeschwindigkeit zwischen den Slides
-		cssEase: "ease", // Sanfterer Übergang statt linear
-		variableWidth: false, // Wichtig: false, damit die Slides einheitliche Breite haben
-		slidesToShow: 1, // Nur ein Slide vollständig anzeigen
+		autoplaySpeed: 2000,
+		speed: 300,
+		cssEase: "ease",
+		variableWidth: false,
+		slidesToShow: 1,
 		slidesToScroll: 1,
 		adaptiveHeight: false,
-		centerMode: false, // Kein centerMode
-		rtl: false, // Nicht rechts-nach-links
-		swipeToSlide: true, // Erlaubt Swipen zur Navigation
+		centerMode: false,
+		rtl: false,
+		swipeToSlide: true,
+		touchThreshold: 8, // Erleichtert das Swipen auf Touch-Geräten
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					// Gleiche Einstellungen für Tablets
+					arrows: true,
+					autoplaySpeed: 2500, // Etwas länger für bessere Lesbarkeit
+				},
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					// Einstellungen für mobile Geräte
+					arrows: true,
+					autoplaySpeed: 3000,
+					speed: 250,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					// Einstellungen für sehr kleine Bildschirme
+					arrows: true,
+					autoplaySpeed: 3000,
+					speed: 250,
+					// Peek-Effekt optional deaktivieren
+					// slidesToShow: 1.0
+				},
+			},
+		],
 	});
 
 	// Collection-Slider (läuft als Band)

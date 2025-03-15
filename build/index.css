@@ -161,15 +161,7 @@
   margin: 0;
 }
 
-/* FONTS */
-@font-face {
-  font-family: "slick";
-  src: url("https://wolter.dbw-development.de/wp-content/themes/childtheme/assets/fonts/slick.woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-/* Config */
+/* Die globalen Variablen für Slick können außerhalb bleiben */
 :root {
   --slick-arrow-color: #000;
   --dots-color: #000;
@@ -177,8 +169,56 @@
   --dots-gap: 5%;
 }
 
-/* Slider */
-.slick-slider {
+/* Die Schriftart wird möglicherweise global gebraucht */
+@font-face {
+  font-family: "slick";
+  src: url("https://wolter.dbw-development.de/wp-content/themes/childtheme/assets/fonts/slick.woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.slider--hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 615px; /* Ausgangshöhe für Desktop */
+  /* Responsive Höhenanpassungen mit deinen Variablen */
+  /* Optionale Anpassung: Bei sehr kleinen Bildschirmen den Peek-Effekt reduzieren */
+  /* Slick Slider Basiskomponenten */
+  /* Slide-Spezifische Styles */
+  /* Dots Navigation */
+  /* Pfeil-Navigation */
+}
+@media (max-width: 1200px) {
+  .slider--hero {
+    height: 500px;
+  }
+}
+@media (max-width: 992px) {
+  .slider--hero {
+    height: 400px;
+  }
+}
+@media (max-width: 768px) {
+  .slider--hero {
+    height: 350px;
+  }
+}
+@media (max-width: 576px) {
+  .slider--hero {
+    height: 300px;
+  }
+}
+@media (max-width: 476px) {
+  .slider--hero .slick-list {
+    width: 100%;
+    overflow: hidden;
+  }
+  .slider--hero .slick-next.slick-arrow {
+    right: 15px;
+  }
+}
+.slider--hero .slick-slider {
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -191,92 +231,115 @@
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
-
-.slick-list {
+.slider--hero .slick-slider .slick-track,
+.slider--hero .slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
+.slider--hero .slick-list {
   position: relative;
   display: block;
   overflow: visible; /* Wichtig: Damit der Peek-Bereich sichtbar ist */
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 83%; /* Desktop-Breite */
+  height: 100%;
+  /* Responsive Breitenanpassungen */
 }
-
-.slick-list:focus {
+@media (max-width: 992px) {
+  .slider--hero .slick-list {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .slider--hero .slick-list {
+    width: 90%; /* Mehr Platz für den Inhalt auf Tablets */
+  }
+}
+@media (max-width: 576px) {
+  .slider--hero .slick-list {
+    width: 95%;
+  }
+}
+.slider--hero .slick-list:focus {
   outline: none;
 }
-
-.slick-list.dragging {
+.slider--hero .slick-list.dragging {
   cursor: pointer;
   cursor: hand;
 }
-
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-  transform: translate3d(0, 0, 0);
-}
-
-.slick-track {
+.slider--hero .slick-track {
   position: relative;
   top: 0;
   left: 0;
   display: block;
   margin-left: 0;
   margin-right: auto;
+  height: 100%;
 }
-
-.slick-track:before,
-.slick-track:after {
+.slider--hero .slick-track:before, .slider--hero .slick-track:after {
   display: table;
   content: "";
 }
-
-.slick-track:after {
+.slider--hero .slick-track:after {
   clear: both;
 }
-
-.slick-loading .slick-track {
+.slider--hero .slick-loading .slick-track {
   visibility: hidden;
 }
-
-.slick-slide {
-  display: none;
+.slider--hero .slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   float: left;
-  height: 100%;
+  height: 100% !important;
   min-height: 1px;
-  aspect-ratio: 16/9;
+  margin-right: 20px;
 }
-
-.slick-slide img {
+@media (max-width: 768px) {
+  .slider--hero .slick-slide {
+    margin-right: 10px; /* Kleinerer Abstand auf Mobilgeräten */
+  }
+}
+.slider--hero .slick-slide img {
   display: block;
 }
-
-.slick-slide.slick-loading img {
+.slider--hero .slick-slide.slick-loading img {
   display: none;
 }
-
-.slick-slide.dragging img {
+.slider--hero .slick-slide.dragging img {
   pointer-events: none;
 }
-
-.slick-initialized .slick-slide {
+.slider--hero .slick-slide figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider--hero .slick-slide figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.slider--hero .slick-initialized .slick-slide {
   display: block;
 }
-
-.slick-loading .slick-slide {
+.slider--hero .slick-loading .slick-slide {
   visibility: hidden;
 }
-
-.slick-vertical .slick-slide {
+.slider--hero .slick-vertical .slick-slide {
   display: block;
   height: auto;
   border: 1px solid transparent;
 }
-
-.slick-arrow.slick-hidden {
+.slider--hero .slick-arrow.slick-hidden {
   display: none;
 }
-
-.slick-dots {
+.slider--hero .slick-dots {
   position: absolute;
   left: 50%;
   margin: 0;
@@ -284,8 +347,7 @@
   display: flex;
   gap: var(--dots-gap);
 }
-
-.slick-dots li {
+.slider--hero .slick-dots li {
   position: relative;
   display: inline-block;
   width: 20px;
@@ -295,8 +357,7 @@
   cursor: pointer;
   scale: var(--dots-scale);
 }
-
-.slick-dots li button {
+.slider--hero .slick-dots li button {
   list-style: none !important;
   font-size: 0;
   line-height: 0;
@@ -311,12 +372,10 @@
   opacity: 0.2;
   background: transparent;
 }
-
-.slick-dots li button:hover {
+.slider--hero .slick-dots li button:hover {
   opacity: 0.5;
 }
-
-.slick-dots li button:before {
+.slider--hero .slick-dots li button:before {
   content: "•";
   font-size: 40px;
   line-height: 20px;
@@ -326,20 +385,18 @@
   width: 20px;
   height: 20px;
   text-align: center;
-  color: var(--dots-color); /* Config ist ganz oben Sichtbar */
+  color: var(--dots-color);
 }
-
-.slick-dots li.slick-active button {
+.slider--hero .slick-dots li.slick-active button {
   opacity: 0.5;
 }
-
-.slick-prev.slick-arrow {
+.slider--hero .slick-prev.slick-arrow {
+  display: none !important; /* Versteckt den linken Pfeil */
   font-size: 0;
   line-height: 0;
   position: absolute;
   top: 50%;
   left: -25px;
-  display: block;
   width: 20px;
   height: 20px;
   padding: 0;
@@ -351,8 +408,7 @@
   background: transparent;
   opacity: 0.8;
 }
-
-.slick-prev.slick-arrow::before {
+.slider--hero .slick-prev.slick-arrow::before {
   content: "";
   display: block;
   width: 20px;
@@ -366,22 +422,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.slick-prev.slick-arrow:hover {
+.slider--hero .slick-prev.slick-arrow:hover {
   opacity: 1;
 }
-
-.slick-next.slick-arrow {
+.slider--hero .slick-next.slick-arrow {
   font-size: 0;
   line-height: 0;
   position: absolute;
   top: 50%;
-  right: 25px;
+  right: 5%;
   display: block;
   width: 52px;
   height: 52px;
   padding: 0;
-  transform: translate(0, -50%);
+  transform: translateY(-50%);
   cursor: pointer;
   color: transparent;
   border: none;
@@ -389,9 +443,29 @@
   background: transparent;
   opacity: 0.8;
   z-index: 10;
+  pointer-events: auto; /* Stellt sicher, dass der Button immer Klicks empfangen kann */
+  /* Responsive Größenanpassung für den Button */
 }
-
-.slick-next.slick-arrow::before {
+@media (max-width: 992px) {
+  .slider--hero .slick-next.slick-arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .slider--hero .slick-next.slick-arrow {
+    width: 35px;
+    height: 35px;
+    right: 5%; /* Näher am Rand auf Tablets */
+  }
+}
+@media (max-width: 576px) {
+  .slider--hero .slick-next.slick-arrow {
+    width: 30px;
+    height: 30px;
+  }
+}
+.slider--hero .slick-next.slick-arrow::before {
   content: "";
   display: block;
   width: 48px;
@@ -405,46 +479,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.slick-next.slick-arrow:hover {
+.slider--hero .slick-next.slick-arrow:hover {
   opacity: 1;
-}
-
-.slider--hero {
-  position: relative;
-  width: 100%;
-  overflow: hidden; /* Container beschränkt, aber slick-list kann überlaufen */
-}
-.slider--hero .slick-prev {
-  display: none !important;
-}
-.slider--hero .slick-list {
-  overflow: visible; /* Erlaubt dem Inhalt, den Container zu überlaufen */
-  width: 83%; /* Begrenzt die Hauptanzeigefläche */
-}
-.slider--hero .slick-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px; /* Abstand zwischen den Slides */
-}
-.slider--hero .slick-slide figure {
-  width: 100%;
-  aspect-ratio: 2/1;
-  overflow: hidden;
-}
-.slider--hero .slick-slide figure img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  aspect-ratio: 2/1;
-}
-.slider--hero .slick-next.slick-arrow {
-  position: absolute;
-  top: 50%;
-  right: 10%;
-  transform: translateY(-50%);
 }
 
 /* Archivo (Reguläre Schrift) */
@@ -663,6 +699,15 @@ mark,
   height: 150px;
 }
 
+.c-border .wp-block-separator {
+  border-top: 1px solid rgb(0, 0, 0);
+  margin: 0;
+}
+
+.d-none {
+  display: none;
+}
+
 #page {
   position: relative;
   overflow: unset;
@@ -677,7 +722,7 @@ mark,
 #content .site-main .inside-article {
   padding: 0;
 }
-body:not(.full-width-content) #content .site-main .inside-article .entry-content > *:not(.gb-container--content__fullwidth) {
+body:not(.full-width-content) #content .site-main .inside-article .entry-content > *:not(.gb-container--content__fullwidth):not(.gb-container--content__fullwidth-narrow) {
   width: 80%;
   max-width: 1800px;
   margin-inline: auto;
@@ -1089,12 +1134,12 @@ nav.offside-js--is-right .offside-sliding-element {
   grid-area: rightbot;
 }
 .site-footer .grid .item-4 p {
-  font-size: 20px;
+  font-size: clamp(16px, 3.5vmin, 20px);
   font-weight: bold;
   gap: 0;
 }
 .site-footer .grid .item-4 p a {
-  font-size: 28px;
+  font-size: clamp(20px, 4vmin, 28px);
   font-weight: normal;
   margin-left: 10px;
 }
@@ -1587,6 +1632,26 @@ nav.offside-js--is-right .offside-sliding-element {
   margin-inline: auto;
   width: 100%;
 }
+.gb-container--content__fullwidth-narrow {
+  width: 100%;
+  padding: 0 6%;
+}
+@media (max-width: 1200px) {
+  .gb-container--content__fullwidth-narrow {
+    padding: 0 5%;
+  }
+}
+@media (max-width: 576px) {
+  .gb-container--content__fullwidth-narrow {
+    padding: 0 4%;
+  }
+}
+.gb-container--content__fullwidth-narrow > * {
+  width: 80%;
+  max-width: 1800px;
+  margin-inline: auto;
+  width: 100%;
+}
 .gb-container--content__fullwidthmax {
   min-width: 100%;
 }
@@ -1821,11 +1886,10 @@ nav.offside-js--is-right .offside-sliding-element {
 
 .project-wrapper .project-grid {
   display: grid;
-  gap: clamp(45px, 5vmin, 75px);
+  gap: clamp(45px, 6vmin, 95px);
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "lefttop righttop" "lefttop rightbot" "leftbot rightbot";
   grid-auto-rows: 1fr;
-  border-bottom: 1px solid rgb(0, 0, 0);
 }
 @media (max-width: 1200px) {
   .project-wrapper .project-grid {
@@ -1914,7 +1978,7 @@ nav.offside-js--is-right .offside-sliding-element {
 }
 @media (max-width: 1200px) {
   .project-wrapper .button-container {
-    margin-bottom: clamp(45px, 5vmin, 75px);
+    margin-bottom: clamp(45px, 6vmin, 95px);
   }
 }
 
@@ -1947,6 +2011,14 @@ nav.offside-js--is-right .offside-sliding-element {
   aspect-ratio: 16/9;
   -o-object-fit: cover;
   object-fit: cover;
+}
+@media (max-width: 768px) {
+  .project-detail-wrapper .product-detail-hero {
+    grid-template-columns: 1fr;
+  }
+  .project-detail-wrapper .product-detail-hero .hero-img {
+    grid-column: 1;
+  }
 }
 .project-detail-wrapper .product-gallery .gallery-grid {
   display: grid;
@@ -1997,49 +2069,17 @@ nav.offside-js--is-right .offside-sliding-element {
   text-align: left;
   margin-bottom: 0;
 }
+@media (max-width: 768px) {
+  .product-quote .gb-text {
+    width: 100%;
+  }
+}
 
 section.projects-overview-page-grid {
-  gap: clamp(45px, 5vmin, 75px);
+  gap: clamp(45px, 6vmin, 95px);
 }
 section.projects-overview-page-grid a {
   color: #363636;
-}
-
-.collection-overview .collections-list ul {
-  margin-left: 400px;
-  row-gap: 75px;
-}
-.collection-overview .collections-list ul li .wc-block-components-product-image {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1/1.5;
-  overflow: hidden;
-}
-.collection-overview .collections-list ul li .wc-block-components-product-image a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.collection-overview .collections-list ul li .wc-block-components-product-image a img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.collection-overview .collections-list ul li .content {
-  position: relative;
-}
-.collection-overview .collections-list ul li .content h2 {
-  color: #333;
-  font-size: 28px;
-}
-.collection-overview .collections-list ul li .content h2 a {
-  color: #333;
-}
-.collection-overview .collections-list ul li .content .price {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .collection-wrapper .collections-list {
@@ -2071,7 +2111,51 @@ section.projects-overview-page-grid a {
     width: 100%;
   }
   .collection-wrapper .collections-list .grid-featured-three .button-container {
-    margin: clamp(45px, 5vmin, 75px) 0;
+    margin: clamp(45px, 6vmin, 95px) 0;
+  }
+}
+
+.collection-overview .collections-list ul {
+  margin-left: 400px;
+  row-gap: 75px;
+}
+.collection-overview .collections-list ul li .wc-block-components-product-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1.5;
+  overflow: hidden;
+}
+.collection-overview .collections-list ul li .wc-block-components-product-image a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.collection-overview .collections-list ul li .wc-block-components-product-image a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.collection-overview .collections-list ul li .content {
+  position: relative;
+}
+.collection-overview .collections-list ul li .content .price {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 28px;
+}
+.collection-overview .collections-list ul li .content .price a {
+  color: #333;
+}
+.collection-overview .collections-list ul li .content .price .price {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@media (max-width: 1200px) {
+  .collection-overview .collections-list ul {
+    margin-left: 0px;
   }
 }
 
@@ -2363,7 +2447,7 @@ section.projects-overview-page-grid a {
 
 .about-wrapper .grid {
   display: grid;
-  gap: 40px;
+  gap: clamp(45px, 6vmin, 95px);
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
 }
@@ -2624,10 +2708,6 @@ section.projects-overview-page-grid a {
     height: 30vh;
     padding-top: 250px;
   }
-}
-
-.hero > *:last-child {
-  border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 body .gb-button,

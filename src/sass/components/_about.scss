@@ -3,7 +3,7 @@
 .about-wrapper {
 	.grid {
 		display: grid;
-		gap: $gap;
+		gap: $grid-gap;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto auto;
 	}

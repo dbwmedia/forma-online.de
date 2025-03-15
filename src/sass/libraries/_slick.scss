@@ -1,6 +1,14 @@
 @use "../global" as *;
 
-/* FONTS */
+/* Die globalen Variablen für Slick können außerhalb bleiben */
+:root {
+	--slick-arrow-color: #000;
+	--dots-color: #000;
+	--dots-scale: 1;
+	--dots-gap: 5%;
+}
+
+/* Die Schriftart wird möglicherweise global gebraucht */
 @font-face {
 	font-family: "slick";
 	src: url("#{$fontsPath}slick.woff");
@@ -9,301 +17,337 @@
 	font-display: swap;
 }
 
-/* Config */
-
-:root {
-	--slick-arrow-color: #000;
-	--dots-color: #000;
-	--dots-scale: 1;
-	--dots-gap: 5%;
-}
-
-/* Slider */
-.slick-slider {
-	position: relative;
-	display: block;
-	box-sizing: border-box;
-	width: 100%;
-
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-
-	-webkit-touch-callout: none;
-	-khtml-user-select: none;
-	-ms-touch-action: pan-y;
-	touch-action: pan-y;
-	-webkit-tap-highlight-color: transparent;
-}
-
-.slick-list {
-	position: relative;
-	display: block;
-	overflow: visible; /* Wichtig: Damit der Peek-Bereich sichtbar ist */
-	margin: 0;
-	padding: 0;
-	width: 100%;
-}
-
-.slick-list:focus {
-	outline: none;
-}
-.slick-list.dragging {
-	cursor: pointer;
-	cursor: hand;
-}
-
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-	-webkit-transform: translate3d(0, 0, 0);
-	-moz-transform: translate3d(0, 0, 0);
-	-ms-transform: translate3d(0, 0, 0);
-	-o-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-}
-
-.slick-track {
-	position: relative;
-	top: 0;
-	left: 0;
-	display: block;
-	margin-left: 0;
-	margin-right: auto;
-}
-
-.slick-track:before,
-.slick-track:after {
-	display: table;
-	content: "";
-}
-
-.slick-track:after {
-	clear: both;
-}
-
-.slick-loading .slick-track {
-	visibility: hidden;
-}
-
-.slick-slide {
-	display: none;
-	float: left;
-	height: 100%;
-	min-height: 1px;
-	aspect-ratio: 16/9;
-}
-
-[dir="rtl"] .slick-slide {
-	//float: right;
-}
-
-.slick-slide img {
-	display: block;
-}
-
-.slick-slide.slick-loading img {
-	display: none;
-}
-
-.slick-slide.dragging img {
-	pointer-events: none;
-}
-
-.slick-initialized .slick-slide {
-	display: block;
-}
-
-.slick-loading .slick-slide {
-	visibility: hidden;
-}
-
-.slick-vertical .slick-slide {
-	display: block;
-	height: auto;
-	border: 1px solid transparent;
-}
-
-.slick-arrow.slick-hidden {
-	display: none;
-}
-
-.slick-dots {
-	position: absolute;
-	left: 50%;
-	margin: 0;
-	transform: translateX(-50%);
-	display: flex;
-	gap: var(--dots-gap);
-}
-
-.slick-dots li {
-	position: relative;
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	margin: 0 5px;
-	padding: 0;
-	cursor: pointer;
-	scale: var(--dots-scale);
-}
-
-.slick-dots li button {
-	list-style: none !important;
-	font-size: 0;
-	line-height: 0;
-	display: block;
-	width: 20px;
-	height: 20px;
-	padding: 5px;
-	cursor: pointer;
-	color: transparent;
-	border: 0;
-	outline: none;
-	opacity: 0.2;
-	background: transparent;
-}
-
-.slick-dots li button:hover {
-	opacity: 0.5;
-}
-
-.slick-dots li button:before {
-	content: "•";
-	font-size: 40px;
-	line-height: 20px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 20px;
-	height: 20px;
-	text-align: center;
-	color: var(--dots-color); /* Config ist ganz oben Sichtbar */
-}
-
-.slick-dots li.slick-active button {
-	opacity: 0.5;
-}
-
-.slick-prev.slick-arrow {
-	font-size: 0;
-	line-height: 0;
-	position: absolute;
-	top: 50%;
-	left: -25px;
-	display: block;
-	width: 20px;
-	height: 20px;
-	padding: 0;
-	-webkit-transform: translate(0, -50%);
-	-ms-transform: translate(0, -50%);
-	transform: translate(0, -50%);
-	cursor: pointer;
-	color: transparent;
-	border: none;
-	outline: none;
-	background: transparent;
-	opacity: 0.8;
-}
-
-.slick-prev.slick-arrow::before {
-	content: "";
-	display: block;
-	width: 20px;
-	height: 20px;
-	background-image: url("#{$iconsPath}arriw.svg");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	transform: rotate(180deg); /* Dreht den Pfeil nach links */
-	opacity: 0.75;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.slick-prev.slick-arrow:hover {
-	opacity: 1;
-}
-
-.slick-next.slick-arrow {
-	font-size: 0;
-	line-height: 0;
-	position: absolute;
-	top: 50%;
-	right: 25px;
-	display: block;
-	width: 52px;
-	height: 52px;
-	padding: 0;
-	-webkit-transform: translate(0, -50%);
-	-ms-transform: translate(0, -50%);
-	transform: translate(0, -50%);
-	cursor: pointer;
-	color: transparent;
-	border: none;
-	outline: none;
-	background: transparent;
-	opacity: 0.8;
-	z-index: 10;
-}
-
-.slick-next.slick-arrow::before {
-	content: "";
-	display: block;
-	width: 48px;
-	height: 48px;
-	overflow: visible;
-	background-image: url("#{$iconsPath}arrow.svg");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	opacity: 0.75;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.slick-next.slick-arrow:hover {
-	opacity: 1;
-}
-
 .slider--hero {
 	position: relative;
 	width: 100%;
-	overflow: hidden; /* Container beschränkt, aber slick-list kann überlaufen */
+	overflow: hidden;
+	height: 615px; /* Ausgangshöhe für Desktop */
 
-	.slick-prev {
-		display: none !important;
+	/* Responsive Höhenanpassungen mit deinen Variablen */
+	@media (max-width: $laptop) {
+		height: 500px;
+	}
+
+	@media (max-width: $phablet) {
+		height: 400px;
+	}
+
+	@media (max-width: $tablet) {
+		height: 350px;
+	}
+
+	@media (max-width: $mobile) {
+		height: 300px;
+	}
+
+	/* Optionale Anpassung: Bei sehr kleinen Bildschirmen den Peek-Effekt reduzieren */
+	@media (max-width: calc($mobile - 100px)) {
+		.slick-list {
+			width: 100%;
+			overflow: hidden;
+		}
+
+		.slick-next.slick-arrow {
+			right: 15px;
+		}
+	}
+
+	/* Slick Slider Basiskomponenten */
+	.slick-slider {
+		position: relative;
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		-webkit-touch-callout: none;
+		-khtml-user-select: none;
+		-ms-touch-action: pan-y;
+		touch-action: pan-y;
+		-webkit-tap-highlight-color: transparent;
+
+		.slick-track,
+		.slick-list {
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			-ms-transform: translate3d(0, 0, 0);
+			-o-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
 	}
 
 	.slick-list {
-		overflow: visible; /* Erlaubt dem Inhalt, den Container zu überlaufen */
-		width: 83%; /* Begrenzt die Hauptanzeigefläche */
+		position: relative;
+		display: block;
+		overflow: visible; /* Wichtig: Damit der Peek-Bereich sichtbar ist */
+		margin: 0;
+		padding: 0;
+		width: 83%; /* Desktop-Breite */
+		height: 100%;
+
+		/* Responsive Breitenanpassungen */
+		@media (max-width: $phablet) {
+			width: 80%;
+		}
+
+		@media (max-width: $tablet) {
+			width: 90%; /* Mehr Platz für den Inhalt auf Tablets */
+		}
+
+		@media (max-width: $mobile) {
+			width: 95%;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&.dragging {
+			cursor: pointer;
+			cursor: hand;
+		}
 	}
 
+	.slick-track {
+		position: relative;
+		top: 0;
+		left: 0;
+		display: block;
+		margin-left: 0;
+		margin-right: auto;
+		height: 100%;
+
+		&:before,
+		&:after {
+			display: table;
+			content: "";
+		}
+
+		&:after {
+			clear: both;
+		}
+	}
+
+	.slick-loading .slick-track {
+		visibility: hidden;
+	}
+
+	/* Slide-Spezifische Styles */
 	.slick-slide {
-		display: flex;
+		display: flex !important;
 		justify-content: center;
 		align-items: center;
-		margin-right: 20px; /* Abstand zwischen den Slides */
+		float: left;
+		height: 100% !important;
+		min-height: 1px;
+		margin-right: 20px;
+
+		@media (max-width: $tablet) {
+			margin-right: 10px; /* Kleinerer Abstand auf Mobilgeräten */
+		}
+
+		img {
+			display: block;
+		}
+
+		&.slick-loading img {
+			display: none;
+		}
+
+		&.dragging img {
+			pointer-events: none;
+		}
 
 		figure {
 			width: 100%;
-			aspect-ratio: 2 / 1;
-			overflow: hidden;
+			height: 100%;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
 			img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				aspect-ratio: 2 / 1;
+				object-position: center;
 			}
 		}
 	}
 
-	.slick-next.slick-arrow {
+	.slick-initialized .slick-slide {
+		display: block;
+	}
+
+	.slick-loading .slick-slide {
+		visibility: hidden;
+	}
+
+	.slick-vertical .slick-slide {
+		display: block;
+		height: auto;
+		border: 1px solid transparent;
+	}
+
+	.slick-arrow.slick-hidden {
+		display: none;
+	}
+
+	/* Dots Navigation */
+	.slick-dots {
+		position: absolute;
+		left: 50%;
+		margin: 0;
+		transform: translateX(-50%);
+		display: flex;
+		gap: var(--dots-gap);
+
+		li {
+			position: relative;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin: 0 5px;
+			padding: 0;
+			cursor: pointer;
+			scale: var(--dots-scale);
+
+			button {
+				list-style: none !important;
+				font-size: 0;
+				line-height: 0;
+				display: block;
+				width: 20px;
+				height: 20px;
+				padding: 5px;
+				cursor: pointer;
+				color: transparent;
+				border: 0;
+				outline: none;
+				opacity: 0.2;
+				background: transparent;
+
+				&:hover {
+					opacity: 0.5;
+				}
+
+				&:before {
+					content: "•";
+					font-size: 40px;
+					line-height: 20px;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 20px;
+					height: 20px;
+					text-align: center;
+					color: var(--dots-color);
+				}
+			}
+
+			&.slick-active button {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	/* Pfeil-Navigation */
+	.slick-prev.slick-arrow {
+		display: none !important; /* Versteckt den linken Pfeil */
+		font-size: 0;
+		line-height: 0;
 		position: absolute;
 		top: 50%;
-		right: 10%;
+		left: -25px;
+		width: 20px;
+		height: 20px;
+		padding: 0;
+		transform: translate(0, -50%);
+		cursor: pointer;
+		color: transparent;
+		border: none;
+		outline: none;
+		background: transparent;
+		opacity: 0.8;
+
+		&::before {
+			content: "";
+			display: block;
+			width: 20px;
+			height: 20px;
+			background-image: url("#{$iconsPath}arriw.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			transform: rotate(180deg); /* Dreht den Pfeil nach links */
+			opacity: 0.75;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.slick-next.slick-arrow {
+		font-size: 0;
+		line-height: 0;
+		position: absolute;
+		top: 50%;
+		right: 5%;
+		display: block;
+		width: 52px;
+		height: 52px;
+		padding: 0;
 		transform: translateY(-50%);
+		cursor: pointer;
+		color: transparent;
+		border: none;
+		outline: none;
+		background: transparent;
+		opacity: 0.8;
+		z-index: 10;
+		pointer-events: auto; /* Stellt sicher, dass der Button immer Klicks empfangen kann */
+
+		/* Responsive Größenanpassung für den Button */
+		@media (max-width: $phablet) {
+			width: 40px;
+			height: 40px;
+		}
+
+		@media (max-width: $tablet) {
+			width: 35px;
+			height: 35px;
+			right: 5%; /* Näher am Rand auf Tablets */
+		}
+
+		@media (max-width: $mobile) {
+			width: 30px;
+			height: 30px;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			width: 48px;
+			height: 48px;
+			overflow: visible;
+			background-image: url("#{$iconsPath}arrow.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			opacity: 0.75;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 }

@@ -10,7 +10,6 @@
 			"lefttop rightbot"
 			"leftbot rightbot";
 		grid-auto-rows: 1fr;
-		border-bottom: $b-border;
 
 		@include mq($until: $laptop) {
 			grid-template-columns: 1fr;

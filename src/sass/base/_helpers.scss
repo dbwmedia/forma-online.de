@@ -33,3 +33,14 @@
 		height: $s-lg;
 	}
 }
+
+.c-border {
+	.wp-block-separator {
+		border-top: $b-border;
+		margin: 0;
+	}
+}
+
+.d-none {
+	display: none;
+}
