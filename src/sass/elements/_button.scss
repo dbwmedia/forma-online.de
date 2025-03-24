@@ -190,7 +190,7 @@ body button.single_add_to_cart_button {
 	&:disabled,
 	&[disabled],
 	&.wc-variation-selection-needed {
-		background: $c-primary !important;
+		background: $c-secondary !important;
 	}
 }
 
@@ -208,11 +208,10 @@ body button.single_add_to_cart_button {
 			border-radius: 100px;
 			align-items: center;
 			background-color: transparent;
-			border: 2px solid $c-primary;
-			color: $c-primary;
+			border: 1px solid $c-body;
 
 			&:hover {
-				border: 2px solid $c-primary;
+				border: 1px solid $c-body;
 				background: $c-primary;
 				color: $c-white;
 				text-decoration: none;
@@ -233,15 +232,15 @@ body button.single_add_to_cart_button {
 			width: fit-content;
 			transition: 0.5s ease all;
 			display: inline-flex;
-			border-radius: 100px;
+			border-radius: 0px;
 			align-items: center;
 			background-color: transparent;
-			border: 2px solid $c-primary;
-			color: $c-primary;
+			border: 1px solid $c-body;
+			color: $c-body;
 
 			&:hover {
-				border: 2px solid $c-primary;
-				background: $c-primary;
+				border: 1px solid $c-body;
+				background: $c-body;
 				color: $c-white;
 				text-decoration: none;
 			}

@@ -1,16 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/components/buttonAlignmen.js":
-/*!*********************************************!*\
-  !*** ./src/js/components/buttonAlignmen.js ***!
-  \*********************************************/
-/***/ (() => {
-
-
-
-/***/ }),
-
 /***/ "./src/js/components/contactPopup.js":
 /*!*******************************************!*\
   !*** ./src/js/components/contactPopup.js ***!
@@ -479,22 +469,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_toggleLabelPosition__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/toggleLabelPosition */ "./src/js/components/toggleLabelPosition.js");
 /* harmony import */ var _components_updateDynamicAnchors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/updateDynamicAnchors */ "./src/js/components/updateDynamicAnchors.js");
 /* harmony import */ var _components_slick__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/slick */ "./src/js/components/slick.js");
-/* harmony import */ var _components_buttonAlignmen__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/buttonAlignmen */ "./src/js/components/buttonAlignmen.js");
-/* harmony import */ var _components_buttonAlignmen__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_buttonAlignmen__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_contactPopup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/contactPopup */ "./src/js/components/contactPopup.js");
+/* harmony import */ var _components_contactPopup__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/contactPopup */ "./src/js/components/contactPopup.js");
 
 
 
 
 
 
-
-(0,_components_contactPopup__WEBPACK_IMPORTED_MODULE_6__["default"])();
+(0,_components_contactPopup__WEBPACK_IMPORTED_MODULE_5__["default"])();
 (0,_components_toggleLabelPosition__WEBPACK_IMPORTED_MODULE_2__["default"])();
 (0,_components_updateDynamicAnchors__WEBPACK_IMPORTED_MODULE_3__["default"])();
 (0,_components_offsetScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
 (0,_components_slick__WEBPACK_IMPORTED_MODULE_4__["default"])();
-_components_buttonAlignmen__WEBPACK_IMPORTED_MODULE_5___default()();
 })();
 
 /******/ })()

@@ -9,3 +9,27 @@
 		text-decoration: none;
 	}
 }
+
+@mixin titelStyle($fontType: "sans") {
+	$font-family: if(
+		$fontType == "serifen",
+		var(--gp-font--spectral),
+		var(--gp-font--archivo)
+	);
+
+	h3,
+	h4 {
+		margin-top: 20px;
+		font-size: $f-sizeBody;
+		margin-bottom: 2px;
+		font-family: $font-family;
+	}
+
+	a {
+		@include no-link-color();
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+}

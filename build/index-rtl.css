@@ -2,6 +2,20 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sass/_index.scss ***!
   \*********************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
+:root {
+  --grid-gap: 200px;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --grid-gap: 150px;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --grid-gap: 100px;
+  }
+}
 .buttonRegular {
   color: #fff;
   background: #ff694a;
@@ -527,7 +541,7 @@ textarea {
 
 h1 {
   font-family: var(--gp-font--spectral);
-  padding: 125px 0 200px 0;
+  padding: 75px 0 125px 0;
 }
 
 h2 {
@@ -582,7 +596,7 @@ input[type=button] {
 body a {
   text-decoration: none;
   transition: color 0.3s;
-  color: #ff694a;
+  color: #64646c;
 }
 body a:hover, body a:focus, body a:active {
   opacity: 1;
@@ -671,8 +685,8 @@ mark,
   margin-inline: unset;
 }
 
-.text-split {
-  padding: 0px 0 75px 0;
+.subheadline {
+  padding: var(--grid-gap) 0 var(--grid-gap) 0;
 }
 
 .valign--center {
@@ -1257,7 +1271,7 @@ nav.offside-js--is-right .offside-sliding-element {
 /* Flexbox */
 .flex-two {
   display: flex;
-  gap: 200px;
+  gap: var(--grid-gap);
   /* Breakpoint Settings */
 }
 .flex-two > div {
@@ -1630,19 +1644,6 @@ nav.offside-js--is-right .offside-sliding-element {
     padding: 50px 4%;
   }
 }
-.gb-container--content__fullwidth:last-of-type {
-  padding-bottom: 200px;
-}
-@media (max-width: 1200px) {
-  .gb-container--content__fullwidth:last-of-type {
-    padding-bottom: 150px;
-  }
-}
-@media (max-width: 576px) {
-  .gb-container--content__fullwidth:last-of-type {
-    padding-bottom: 100px;
-  }
-}
 .gb-container--content__fullwidth > * {
   width: 80%;
   max-width: 1800px;
@@ -1903,7 +1904,7 @@ nav.offside-js--is-right .offside-sliding-element {
 
 .project-wrapper .project-grid {
   display: grid;
-  gap: 200px;
+  gap: var(--grid-gap);
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "lefttop righttop" "lefttop rightbot" "leftbot rightbot";
   grid-auto-rows: 1fr;
@@ -1948,23 +1949,22 @@ nav.offside-js--is-right .offside-sliding-element {
   -ms-grid-column: 3;
   grid-area: rightbot;
 }
-.project-wrapper .project .content-wrapper {
-  height: 100%;
-}
-.project-wrapper .project h3 {
+.project-wrapper .project h3,
+.project-wrapper .project h4 {
   margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: clamp(14px, 3.5vmin, 18px);
+  margin-bottom: 2px;
+  font-family: var(--gp-font--archivo);
 }
-.project-wrapper .project h3 a {
+.project-wrapper .project a {
   color: #363636;
   transition: color 0.3s ease;
 }
-.project-wrapper .project h3 a:hover {
+.project-wrapper .project a:hover {
   color: #363636;
   text-decoration: none;
 }
 .project-wrapper .project p {
-  text-transform: uppercase;
   margin-bottom: 0;
 }
 .project-wrapper .button-container {
@@ -1996,14 +1996,20 @@ nav.offside-js--is-right .offside-sliding-element {
 .project-wrapper .button-container > div:first-child {
   margin: 0 auto;
 }
-.project-wrapper .button-container .spacer {
-  width: 100%;
-  height: 0;
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .project-wrapper .button-container .spacer {
+    height: clamp(50px, 6vw, 230px);
+  }
+}
+@media (min-width: 1921px) {
+  .project-wrapper .button-container .spacer {
+    height: 280px;
+  }
 }
 @media (max-width: 1200px) {
   .project-wrapper .button-container {
     justify-content: center;
-    margin-bottom: 200px;
+    margin-bottom: var(--grid-gap);
   }
   .project-wrapper .button-container .spacer {
     display: none;
@@ -2024,12 +2030,17 @@ nav.offside-js--is-right .offside-sliding-element {
 }
 
 .project-detail-wrapper .product-detail-hero {
-  border-top: 1px solid rgb(0, 0, 0);
   padding: 50px 0 100px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: min-content;
   gap: 40px;
+}
+.project-detail-wrapper .product-detail-hero > div:not(.hero-img) {
+  padding: var(--grid-gap) 0 var(--grid-gap) 0;
+}
+.project-detail-wrapper .product-detail-hero > div:not(.hero-img) h1 {
+  padding: 0;
 }
 .project-detail-wrapper .product-detail-hero .hero-img {
   grid-column: span 2/span 2;
@@ -2104,48 +2115,107 @@ nav.offside-js--is-right .offside-sliding-element {
 }
 
 section.projects-overview-page-grid {
-  gap: 200px;
+  gap: var(--grid-gap);
+}
+section.projects-overview-page-grid h3,
+section.projects-overview-page-grid h4 {
+  margin-top: 20px;
+  font-size: clamp(14px, 3.5vmin, 18px);
+  margin-bottom: 2px;
+  font-family: var(--gp-font--archivo);
 }
 section.projects-overview-page-grid a {
   color: #363636;
+  transition: color 0.3s ease;
+}
+section.projects-overview-page-grid a:hover {
+  color: #363636;
+  text-decoration: none;
+}
+section.projects-overview-page-grid p {
+  margin-bottom: 0;
 }
 
 .collection-wrapper .collections-list {
   display: flex;
   justify-content: space-between;
 }
-.collection-wrapper .collections-list .grid-featured-three .product h4 {
-  margin-bottom: 10px;
-  margin-top: 20px;
+.collection-wrapper .collections-list .product-grid {
+  display: grid !important;
+  width: 80%;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: var(--grid-gap) !important;
 }
-.collection-wrapper .collections-list .grid-featured-three .product h4 a {
+.collection-wrapper .collections-list .product-grid .product .wc-block-components-product-image img {
+  aspect-ratio: 1/1.5;
+}
+.collection-wrapper .collections-list .product-grid .product h3,
+.collection-wrapper .collections-list .product-grid .product h4 {
+  margin-top: 20px;
+  font-size: clamp(14px, 3.5vmin, 18px);
+  margin-bottom: 2px;
+  font-family: var(--gp-font--archivo);
+}
+.collection-wrapper .collections-list .product-grid .product a {
   color: #363636;
   transition: color 0.3s ease;
 }
-.collection-wrapper .collections-list .grid-featured-three .product h4 a:hover {
+.collection-wrapper .collections-list .product-grid .product a:hover {
   color: #363636;
   text-decoration: none;
+}
+.collection-wrapper .collections-list .product-grid .product p {
+  margin-bottom: 0;
 }
 .collection-wrapper .collections-list .button-container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
   .collection-wrapper .collections-list {
-    flex-direction: column;
+    display: block;
+    position: relative;
   }
-  .collection-wrapper .collections-list .grid-featured-three {
+  .collection-wrapper .collections-list .product-grid {
     width: 100%;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
-  .collection-wrapper .collections-list .grid-featured-three .button-container {
-    margin: 200px 0;
+  .collection-wrapper .collections-list .button-container {
+    position: absolute;
+    left: 10%;
+    bottom: 25%;
+  }
+}
+@media (max-width: 768px) {
+  .collection-wrapper .collections-list .product-grid {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .collection-wrapper .collections-list .button-container {
+    position: relative;
+    left: unset;
+    bottom: unset;
+    padding: var(--grid-gap) 0 var(--grid-gap) 0;
+    margin: 0 auto;
+    width: 100%;
   }
 }
 
 .collection-overview .collections-list ul {
-  margin-right: 400px;
-  row-gap: 75px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
+}
+@media (max-width: 1200px) {
+  .collection-overview .collections-list ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .collection-overview .collections-list ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .collection-overview .collections-list ul li .wc-block-components-product-image {
   position: relative;
@@ -2167,14 +2237,29 @@ section.projects-overview-page-grid a {
 .collection-overview .collections-list ul li .content {
   position: relative;
 }
+.collection-overview .collections-list ul li .content h3,
+.collection-overview .collections-list ul li .content h4 {
+  margin-top: 20px;
+  font-size: clamp(14px, 3.5vmin, 18px);
+  margin-bottom: 2px;
+  font-family: var(--gp-font--archivo);
+}
+.collection-overview .collections-list ul li .content a {
+  color: #363636;
+  transition: color 0.3s ease;
+}
+.collection-overview .collections-list ul li .content a:hover {
+  color: #363636;
+  text-decoration: none;
+}
+.collection-overview .collections-list ul li .content p {
+  margin-bottom: 0;
+}
 .collection-overview .collections-list ul li .content .price {
   margin-top: 20px;
   margin-bottom: 10px;
   color: #333;
   font-size: 28px;
-}
-.collection-overview .collections-list ul li .content .price a {
-  color: #333;
 }
 .collection-overview .collections-list ul li .content .price .price {
   position: absolute;
@@ -2203,6 +2288,7 @@ section.projects-overview-page-grid a {
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .dbw-custom-product-container .product .dbw-product-gallery .dbw-product-image {
   width: 100%;
@@ -2347,7 +2433,6 @@ section.projects-overview-page-grid a {
 @media (max-width: 1200px) {
   .dbw-custom-product-container .product {
     flex-direction: column;
-    flex-wrap: wrap;
   }
   .dbw-custom-product-container .product .dbw-product-title-image {
     display: block;
@@ -2475,9 +2560,20 @@ section.projects-overview-page-grid a {
 
 .about-wrapper .grid {
   display: grid;
-  gap: 200px;
+  gap: var(--grid-gap);
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
+}
+.about-wrapper .grid > div {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+.about-wrapper .grid > div > div {
+  height: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .about-wrapper > div:nth-child(2) {
   grid-column: span 2;
@@ -2516,16 +2612,14 @@ section.projects-overview-page-grid a {
 }
 
 .steps {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 40px 0;
 }
 .steps .step {
-  border: 2px solid #ff694a;
-  border-radius: 32px;
+  border: 2px solid #363636;
+  border-radius: 0;
   padding: 30px;
   flex: 1 1 250px;
   text-align: center;
@@ -2559,16 +2653,7 @@ section.projects-overview-page-grid a {
   stroke-miterlimit: 10;
   max-width: 100%;
 }
-@media (min-width: 1370px) {
-  .steps .step {
-    min-height: calc(100% - 40px);
-  }
-}
 @media (max-width: 1370px) {
-  .steps {
-    flex-direction: column;
-    align-items: stretch;
-  }
   .steps .step {
     width: 100%;
     min-height: auto;
@@ -2585,34 +2670,54 @@ section.projects-overview-page-grid a {
     display: none;
   }
 }
+@media (max-width: 1200px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
 
-.contact-person .grid {
+.contact-person-wrapper .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
+  gap: 20px;
 }
-.contact-person .grid .contact-person {
+.contact-person-wrapper .grid .contact-person {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.contact-person .grid .contact-person img {
+.contact-person-wrapper .grid .contact-person img {
   max-height: 350px;
   width: auto;
 }
-.contact-person .grid .content {
+.contact-person-wrapper .grid .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 30px;
 }
-.contact-person .grid .content p {
+.contact-person-wrapper .grid .content p {
   margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .contact-person-wrapper .grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-person-wrapper .grid .contact-person img {
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    min-width: 100%;
+  }
 }
 
 .coming-soon-label {
-  background: #ff694a;
-  color: white;
+  border: 1px solid #363636;
   padding: 5px 10px;
   font-size: 12px;
   font-weight: bold;
@@ -2961,7 +3066,7 @@ body button.single_add_to_cart_button.disabled,
 body button.single_add_to_cart_button:disabled,
 body button.single_add_to_cart_button[disabled],
 body button.single_add_to_cart_button.wc-variation-selection-needed {
-  background: #ff694a !important;
+  background: #64646c !important;
 }
 
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt,
@@ -2977,14 +3082,13 @@ body button.single_add_to_cart_button.wc-variation-selection-needed {
   border-radius: 100px;
   align-items: center;
   background-color: transparent;
-  border: 2px solid #ff694a;
-  color: #ff694a;
+  border: 1px solid #363636;
 }
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt:hover,
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt:hover,
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt:hover,
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt:hover {
-  border: 2px solid #ff694a;
+  border: 1px solid #363636;
   background: #ff694a;
   color: #fff;
   text-decoration: none;
@@ -2999,18 +3103,18 @@ body button.single_add_to_cart_button.wc-variation-selection-needed {
   width: fit-content;
   transition: 0.5s ease all;
   display: inline-flex;
-  border-radius: 100px;
+  border-radius: 0px;
   align-items: center;
   background-color: transparent;
-  border: 2px solid #ff694a;
-  color: #ff694a;
+  border: 1px solid #363636;
+  color: #363636;
 }
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) #respond input#submit.alt:hover,
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) a.button.alt:hover,
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) button.button.alt:hover,
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) input.button.alt:hover {
-  border: 2px solid #ff694a;
-  background: #ff694a;
+  border: 1px solid #363636;
+  background: #363636;
   color: #fff;
   text-decoration: none;
 }

@@ -111,7 +111,7 @@
 			}
 
 			&:last-child.current-menu-item a {
-				background-color: #ff694a; // Deine Primärfarbe für aktiven Zustand
+				background-color: $c-primary; // Deine Primärfarbe für aktiven Zustand
 			}
 		}
 	}

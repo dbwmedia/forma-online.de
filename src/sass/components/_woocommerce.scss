@@ -2,8 +2,7 @@
 
 // Coming Soon Label auf Produktübersicht
 .coming-soon-label {
-	background: $c-primary;
-	color: white;
+	border: 1px solid $c-body;
 	padding: 5px 10px;
 	font-size: 12px;
 	font-weight: bold;

@@ -41,7 +41,7 @@ add_action('woocommerce_before_shop_loop_item_title', 'add_coming_soon_label_to_
 function add_coming_soon_label_to_single_product() {
     global $product;
     if ($product && dbw_is_product_coming_soon($product->get_id())) {
-        echo '<span class="coming-soon-label">🚀 Coming Soon</span>';
+        echo '<span class="coming-soon-label">Coming Soon</span>';
     }
 }
 // Auf der Produktdetailseite über dem Titel

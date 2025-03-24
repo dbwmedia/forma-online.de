@@ -35,22 +35,8 @@
 
 	.project {
 		.content-wrapper {
-			height: 100%;
-
-			.content {
-			}
 		}
-		h3 {
-			margin-top: 20px;
-			margin-bottom: 10px;
-			a {
-				@include no-link-color();
-			}
-		}
-		p {
-			text-transform: uppercase;
-			margin-bottom: 0;
-		}
+		@include titelStyle();
 	}
 
 	.button-container {
@@ -63,10 +49,15 @@
 			margin: 0 auto; // Zentrieren
 		}
 
-		// Spacer wird benötigt für die dynamische Höhe
-		.spacer {
-			width: 100%; // Volle Breite
-			height: 0; // Standard-Höhe, wird durch JS überschrieben
+		@media (min-width: 1200px) and (max-width: 1920px) {
+			.spacer {
+				height: clamp(50px, 6vw, 230px);
+			}
+		}
+		@media (min-width: 1921px) {
+			.spacer {
+				height: 280px;
+			}
 		}
 
 		@include mq($until: $laptop) {

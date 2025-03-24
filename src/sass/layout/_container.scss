@@ -16,17 +16,17 @@
 			padding: 50px $contentPaddingMobile;
 		}
 
-		&:last-of-type {
-			padding-bottom: 200px;
+		// &:last-of-type {
+		// 	padding-bottom: 200px;
 
-			@media (max-width: $laptop) {
-				padding-bottom: 150px;
-			}
+		// 	@media (max-width: $laptop) {
+		// 		padding-bottom: 150px;
+		// 	}
 
-			@media (max-width: $mobile) {
-				padding-bottom: 100px;
-			}
-		}
+		// 	@media (max-width: $mobile) {
+		// 		padding-bottom: 100px;
+		// 	}
+		// }
 
 		& > * {
 			@include containerWrap();

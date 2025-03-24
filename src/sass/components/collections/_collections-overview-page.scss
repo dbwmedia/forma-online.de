@@ -3,8 +3,17 @@
 .collection-overview {
 	.collections-list {
 		ul {
-			margin-left: 400px;
-			row-gap: 75px;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: $grid-gap;
+
+			@include mq($until: $laptop) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@include mq($until: $tablet) {
+				grid-template-columns: repeat(1, 1fr);
+			}
 
 			li {
 				.wc-block-components-product-image {
@@ -28,15 +37,13 @@
 				.content {
 					position: relative;
 
+					@include titelStyle();
+
 					.price {
 						margin-top: 20px;
 						margin-bottom: 10px;
 						color: $c-headline;
 						font-size: 28px;
-
-						a {
-							color: $c-headline;
-						}
 
 						.price {
 							position: absolute;

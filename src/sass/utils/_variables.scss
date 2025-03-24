@@ -1,3 +1,7 @@
+:root {
+	--grid-gap: 200px;
+}
+
 //--------------------------------------------------------------
 // # Base Colors
 // todo: tbc
@@ -26,24 +30,6 @@ $c-black: #222222;
 $c-gray: #6a747c;
 $c-grayLight: #f2f2f2;
 $c-grayBg: #f8f8f8;
-
-//--------------------------------------------------------------
-// # Space
-//--------------------------------------------------------------
-
-$spaceBase: 100px; // todo: tbc
-$space: $spaceBase;
-
-$s-xs: calc($space / 4); // 25px
-$s-sm: calc($space / 2); // 50px
-$s-md: $space; // 100px
-$s-lg: calc($space + ($space / 2)); // 150px
-$s-xl: calc($space * 2); // 200px
-
-$gap-s: 20px;
-$gap: 40px;
-$grid-gap: 200px;
-$gap-xl: 100px;
 
 //--------------------------------------------------------------
 // # Buttons
@@ -122,6 +108,36 @@ $wide: 1440px; // xxl
 $containerWidth: 80%;
 $containerMaxWidth: 1800px; // todo: tbc
 $containerPad: 10%;
+
+//--------------------------------------------------------------
+// # Space
+//--------------------------------------------------------------
+
+$spaceBase: 100px; // todo: tbc
+$space: $spaceBase;
+
+$s-xs: calc($space / 4); // 25px
+$s-sm: calc($space / 2); // 50px
+$s-md: $space; // 100px
+$s-lg: calc($space + ($space / 2)); // 150px
+$s-xl: calc($space * 2); // 200px
+
+$gap-s: 20px;
+$gap: 40px;
+$gap-xl: 100px;
+$grid-gap: var(--grid-gap);
+
+@media (max-width: $laptop) {
+	:root {
+		--grid-gap: 150px;
+	}
+}
+
+@media (max-width: $tablet) {
+	:root {
+		--grid-gap: 100px;
+	}
+}
 
 //--------------------------------------------------------------
 // # Path variables

@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "sass:list";
-@use "sass:meta"; 
-@use "sass:string"; 
+@use "sass:meta";
+@use "sass:string";
 @use "../variables" as *;
 
 $breakpoints: (
@@ -48,7 +48,8 @@ $media-type: all !default;
 
 	// From: this breakpoint (inclusive)
 	@if $from {
-		@if meta.type-of($from) == number { // Geändert: type-of → meta.type-of
+		@if meta.type-of($from) == number {
+			// Geändert: type-of → meta.type-of
 			$min-width: $from;
 		} @else {
 			$min-width: get-breakpoint-width($from, $breakpoints);
@@ -57,7 +58,8 @@ $media-type: all !default;
 
 	// Until: that breakpoint (exclusive)
 	@if $until {
-		@if meta.type-of($until) == number { // Geändert: type-of → meta.type-of
+		@if meta.type-of($until) == number {
+			// Geändert: type-of → meta.type-of
 			$max-width: $until;
 		} @else {
 			$max-width: calc(get-breakpoint-width($until, $breakpoints) - 1px);
@@ -77,7 +79,10 @@ $media-type: all !default;
 	// Remove unnecessary media query prefix 'all and '
 	@if ($media-type == "all" and $media-query != "") {
 		$media-type: "";
-		$media-query: string.slice(string.unquote($media-query), 6); // Geändert: str-slice & unquote → string.slice & string.unquote
+		$media-query: string.slice(
+			string.unquote($media-query),
+			6
+		); // Geändert: str-slice & unquote → string.slice & string.unquote
 	}
 
 	@media #{$media-type + $media-query} {
