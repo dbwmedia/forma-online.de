@@ -3,7 +3,7 @@
 /* Flexbox */
 .flex-two {
 	display: flex;
-	gap: $gap;
+	gap: $grid-gap;
 	> div {
 		display: flex;
 		flex: 1;

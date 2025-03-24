@@ -15,7 +15,7 @@ body button {
 	&--inverted,
 	&--secondary {
 		display: inline-flex;
-		border-radius: 100px;
+		border-radius: 0px;
 		border: 0 solid;
 		&:hover {
 			cursor: pointer;
@@ -31,15 +31,15 @@ body button {
 		display: inline-flex;
 		align-items: center;
 		background-color: transparent;
-		border: 1px solid $c-primary;
-		color: $c-primary;
+		border: 1px solid $c-body;
+		color: $c-body;
 
 		&.gb-block-is-current {
 		}
 
 		&:hover {
-			border: 1px solid $c-primary;
-			background: $c-primary;
+			border: 1px solid $c-secondary;
+			background: $c-secondary;
 			color: $c-white;
 			text-decoration: none;
 		}

@@ -1,5 +1,4 @@
 @use "../../global" as *;
-
 .project-wrapper {
 	.project-grid {
 		display: grid;
@@ -18,7 +17,7 @@
 				"righttop"
 				"rightbot"
 				"leftbot";
-			grid-auto-rows: auto; // Passt die Höhe automatisch an den Inhalt an
+			grid-auto-rows: auto;
 		}
 	}
 
@@ -35,6 +34,12 @@
 	}
 
 	.project {
+		.content-wrapper {
+			height: 100%;
+
+			.content {
+			}
+		}
 		h3 {
 			margin-top: 20px;
 			margin-bottom: 10px;
@@ -44,18 +49,33 @@
 		}
 		p {
 			text-transform: uppercase;
+			margin-bottom: 0;
 		}
 	}
 
 	.button-container {
 		text-align: center;
+
 		grid-area: leftbot;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+
+		// Button-Container
+		> div:first-child {
+			margin: 0 auto; // Zentrieren
+		}
+
+		// Spacer wird benötigt für die dynamische Höhe
+		.spacer {
+			width: 100%; // Volle Breite
+			height: 0; // Standard-Höhe, wird durch JS überschrieben
+		}
+
 		@include mq($until: $laptop) {
+			justify-content: center;
 			margin-bottom: $grid-gap;
+
+			.spacer {
+				display: none; // Auf Mobilgeräten ausblenden
+			}
 		}
 	}
 }

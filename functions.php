@@ -59,4 +59,3 @@ function custom_math_captcha_validation($result, $tag) {
 }
 add_filter('wpcf7_validate_text*', 'custom_math_captcha_validation', 20, 2);
 
-

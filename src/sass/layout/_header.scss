@@ -8,7 +8,7 @@
 	z-index: 999;
 	background-color: $c-white;
 	transition: $t-transition;
-	padding: 0 $contentPadding;
+	padding: 30px $contentPadding;
 
 	.inside-header {
 		color: $c-black;
@@ -50,13 +50,13 @@
 					bottom: 10px; // Abstand zum Text
 					width: 100%;
 					height: 1px;
-					background-color: $c-primary;
+					background-color: $c-secondary;
 					transform: scaleX(0); // Standard: Unsichtbar
 					transition: transform 0.3s ease-in-out;
 				}
 
 				&:hover {
-					color: $c-primary;
+					color: $c-secondary;
 				}
 
 				&,
@@ -74,7 +74,7 @@
 
 			&.current-menu-item {
 				a {
-					color: $c-primary; // Aktive Seite färben
+					color: $c-secondary; // Aktive Seite färben
 					text-decoration: none;
 
 					&::after {
