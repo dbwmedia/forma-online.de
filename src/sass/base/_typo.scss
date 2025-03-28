@@ -16,7 +16,12 @@ textarea {
 
 h1 {
 	font-family: var(--gp-font--spectral);
-	padding: 75px 0 125px 0;
+	padding: 25px 0 125px 0;
+
+	@include mq($until: $mobile) {
+		padding: 0px 0 75px 0;
+		font-weight: 100 !important;
+	}
 }
 
 h2 {
@@ -88,6 +93,10 @@ h1,
 	letter-spacing: -0.02em;
 	line-height: 1.05;
 	text-align: left;
+
+	@include mq($until: $mobile) {
+		margin-bottom: 3px;
+	}
 }
 
 h2,
@@ -185,8 +194,11 @@ mark,
 }
 
 .text-split {
+	@include mq($until: $mobile) {
+		gap: 0 !important;
+	}
 }
 
 .subheadline {
-	padding: $grid-gap 0 $grid-gap 0;
+	padding: 0 0 $grid-gap 0;
 }

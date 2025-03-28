@@ -68,7 +68,7 @@
 	padding: 40px 0;
 
 	.step {
-		border: 2px solid $c-body;
+		border: 1px solid $c-body;
 		border-radius: 0;
 		padding: 30px;
 		flex: 1 1 250px; // Allows growth, with a minimum width
@@ -86,7 +86,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-		}
+		} 
 	}
 
 	.arrow {

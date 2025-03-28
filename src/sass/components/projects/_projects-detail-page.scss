@@ -11,7 +11,7 @@
 			h1 {
 				padding: 0;
 			}
-			padding: $grid-gap 0 $grid-gap 0;
+			padding: 0 0 $grid-gap 0;
 		}
 
 		.hero-img {
@@ -26,10 +26,22 @@
 
 		// Media Query für kleinere Bildschirme
 		@media (max-width: $tablet) {
+			padding: 50px 0 0px 0;
 			grid-template-columns: 1fr; // Ändert auf eine Spalte
 
 			.hero-img {
 				grid-column: 1; // Nur eine Spalte belegen
+			}
+		}
+
+		@media (max-width: $mobile) {
+			padding: 0px 0 0px 0;
+
+			> div:not(.hero-img) {
+				h1 {
+					padding: 0;
+				}
+				padding: 0 0 0 0;
 			}
 		}
 	}
@@ -100,5 +112,10 @@
 		.gb-text {
 			width: 100%;
 		}
+	}
+}
+
+.detail-wrapper-grid {
+	@include mq($until: $mobile) {
 	}
 }
