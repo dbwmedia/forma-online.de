@@ -86,7 +86,7 @@ function dbw_display_coming_soon_text() {
  * Zeigt den Coming Soon Kontakt-Text mit Popup-Trigger an
  */
 function dbw_display_coming_soon_contact() {
-    echo '<p class="coming-soon-contact">Mehr erfahren? <span class="popup-trigger product-contact-trigger"><a href="#" title="data-popup="kontakt"">Kontakt.</a></span></p>';
+    echo '<p class="coming-soon-contact">Für Vorbestellungen melde dich gerne <span class="popup-trigger product-contact-trigger"><a href="#" title="data-popup="kontakt"">hier.</a></span></p>';
 }
 
 /**

@@ -85,6 +85,7 @@ $borderRadiusL: 64px;
 $f-font: "Arial";
 $f-weight: 500;
 $f-sizeBody: clamp(16px, 3.5vmin, 18px);
+$f-sizeBodyPlus: clamp(18px, 3.5vmin, 20px);
 $f-sizeBodySmall: clamp(12px, 3.5vmin, 14px);
 $f-sizeBodyMedium: clamp(18px, 3.5vmin, 22px);
 $f-sizeBodyLarge: clamp(22px, 3.5vmin, 26px);
@@ -135,7 +136,7 @@ $grid-gap: var(--grid-gap);
 
 @media (max-width: $tablet) {
 	:root {
-		--grid-gap: 100px;
+		--grid-gap: 30px;
 	}
 }
 

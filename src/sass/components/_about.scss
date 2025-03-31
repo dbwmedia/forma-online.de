@@ -10,11 +10,38 @@
 			display: flex;
 			min-height: 100%;
 			flex-direction: column;
-			> div {
-				height: 100%;
-				height: 100%;
-				display: flex;
-				align-items: center;
+		}
+
+		.about-detail-text-wrapper {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			@include mq($until: $tablet) {
+				height: auto;
+				.about-detail-text {
+					padding: var(--grid-gap) 0 0 0;
+				}
+			}
+		}
+	}
+
+	.about-subheadline-wrapper {
+		.about-subheadline {
+			padding: var(--grid-gap) 0 var(--grid-gap) 0;
+			h2 {
+				font-size: clamp(27px, 6vmin, 75px);
+				margin-bottom: 0px;
+			}
+		}
+		@include mq($until: $tablet) {
+			.about-subheadline {
+				padding: 100px 0 100px 0;
+			}
+		}
+
+		@include mq($until: $mobile) {
+			.about-subheadline {
+				padding: 100px 0 100px 0;
 			}
 		}
 	}
@@ -39,7 +66,7 @@
 		.grid {
 			grid-template-columns: 1fr;
 			grid-template-rows: auto;
-			gap: calc($gap / 2);
+			gap: $grid-gap;
 			> div {
 				grid-column: span 1;
 				grid-row: auto;
@@ -56,7 +83,7 @@
 
 	@include mq($until: $mobile) {
 		.grid {
-			gap: calc($gap / 3); // Noch engere Abstände für sehr kleine Screens
+			gap: $grid-gap;
 		}
 	}
 }
@@ -86,7 +113,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-		} 
+		}
 	}
 
 	.arrow {

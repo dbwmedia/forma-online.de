@@ -8,7 +8,7 @@ const Slick = () => {
 	// Hero-Slider (läuft ohne Pause)
 	jQuery(".slider--hero").slick({
 		dots: false,
-		arrows: true,
+		arrows: false,
 		infinite: true,
 		autoplay: true,
 		pauseOnHover: false, // Wir deaktivieren die eingebaute pauseOnHover-Funktion
@@ -29,7 +29,7 @@ const Slick = () => {
 			{
 				breakpoint: 992,
 				settings: {
-					arrows: true,
+					arrows: false,
 					autoplaySpeed: 1,
 					speed: 8000,
 				},
@@ -37,7 +37,7 @@ const Slick = () => {
 			{
 				breakpoint: 768,
 				settings: {
-					arrows: true,
+					arrows: false,
 					autoplaySpeed: 1,
 					speed: 8000,
 				},
@@ -45,7 +45,7 @@ const Slick = () => {
 			{
 				breakpoint: 480,
 				settings: {
-					arrows: true,
+					arrows: false,
 					autoplaySpeed: 1,
 					speed: 8000,
 				},

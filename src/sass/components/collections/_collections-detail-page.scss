@@ -212,7 +212,8 @@
 				border-top: none;
 				max-height: fit-content;
 				display: block;
-				margin: 5% $contentPaddingLaptop;
+				margin: $grid-gap 0;
+				margin-bottom: $grid-gap !important;
 				padding: 0;
 				order: 2;
 				width: 100% !important;
@@ -234,13 +235,16 @@
 
 		@media (max-width: $mobile) {
 			.summary {
-				margin: 5% $contentPaddingMobile;
 			}
 		}
 	}
 }
 
 .product_cat-coming-soon {
+	.dbw-variations-info {
+		display: none;
+	}
+
 	.wc-coming-soon-notice {
 		order: 3;
 	}

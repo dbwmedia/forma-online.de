@@ -27,10 +27,10 @@
 				//margin-top: $s-md;
 
 				& > * {
+					// Standardverhalten
 					&:not(.gb-container--content__fullwidth):not(
 							.gb-container--content__fullwidth-narrow
 						) {
-						// Überprüfen, ob der Body NICHT die Klasse "full-width-content" hat
 						body:not(.full-width-content) & {
 							@include containerWrap;
 						}
@@ -44,6 +44,7 @@
 		}
 	}
 }
+
 .container {
 	position: relative;
 	max-width: 1600px;
@@ -58,4 +59,8 @@
 	.inside-article {
 		padding: 0;
 	}
+}
+
+p:empty {
+	margin-bottom: 0;
 }

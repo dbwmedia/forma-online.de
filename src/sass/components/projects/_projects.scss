@@ -6,31 +6,32 @@
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas:
 			"lefttop righttop"
-			"lefttop rightbot"
+			"leftbot righttop"
 			"leftbot rightbot";
 		grid-auto-rows: 1fr;
+		grid-auto-rows: auto;
 
-		@include mq($until: $laptop) {
+		@include mq($until: $tablet) {
 			grid-template-columns: 1fr;
 			grid-template-areas:
 				"lefttop"
 				"righttop"
-				"rightbot"
-				"leftbot";
+				"leftbot"
+				"rightbot";
 			grid-auto-rows: auto;
 		}
 	}
 
 	.project:nth-child(1) {
-		grid-area: lefttop;
-	}
-
-	.project:nth-child(2) {
 		grid-area: righttop;
 	}
 
+	.project:nth-child(2) {
+		grid-area: lefttop;
+	}
+
 	.project:nth-child(3) {
-		grid-area: rightbot;
+		grid-area: leftbot;
 	}
 
 	.project {
@@ -42,7 +43,7 @@
 	.button-container {
 		text-align: center;
 
-		grid-area: leftbot;
+		grid-area: rightbot;
 
 		// Button-Container
 		> div:first-child {
@@ -67,6 +68,9 @@
 			.spacer {
 				display: none; // Auf Mobilgeräten ausblenden
 			}
+		}
+		@include mq($until: $mobile) {
+			text-align: left;
 		}
 	}
 }

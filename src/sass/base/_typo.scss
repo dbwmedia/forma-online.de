@@ -17,27 +17,100 @@ textarea {
 h1 {
 	font-family: var(--gp-font--spectral);
 	padding: 25px 0 125px 0;
+	font-weight: 600 !important;
 
 	@include mq($until: $mobile) {
 		padding: 0px 0 75px 0;
-		font-weight: 100 !important;
 	}
 }
 
 h2 {
 	font-family: var(--gp-font--spectral);
+	font-weight: 600 !important;
 }
 
 h3 {
 	font-family: var(--gp-font--archivo);
+	font-weight: 500 !important;
 }
 
 h4 {
 	font-family: var(--gp-font--spectral);
+	font-weight: 600 !important;
 }
 
 p {
 	font-family: var(--gp-font--archivo);
+	font-weight: 500 !important;
+}
+
+.headline-test-archivo {
+	h2 {
+		font-family: var(--gp-font--archivo);
+
+		&:nth-child(1) {
+			font-weight: 300 !important;
+		}
+
+		&:nth-child(2) {
+			font-weight: 400 !important;
+		}
+
+		&:nth-child(3) {
+			font-weight: 500 !important;
+		}
+
+		&:nth-child(4) {
+			font-weight: 700 !important;
+		}
+	}
+}
+
+.headline-test-spectral {
+	h2 {
+		font-family: var(--gp-font--spectral) !important;
+
+		&:nth-child(1) {
+			font-weight: 300 !important;
+		}
+
+		&:nth-child(2) {
+			font-weight: 400 !important;
+		}
+
+		&:nth-child(3) {
+			font-weight: 500 !important;
+		}
+
+		&:nth-child(4) {
+			font-weight: 600 !important;
+		}
+
+		&:nth-child(5) {
+			font-weight: 700 !important;
+		}
+	}
+}
+
+.headline-test-spectral {
+}
+.headline-narrow {
+	@include mq($until: $mobile) {
+		max-width: 100% !important;
+	}
+}
+
+body {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@include mq($until: $tablet) {
+			font-weight: 300;
+		}
+	}
 }
 
 p,
@@ -88,7 +161,7 @@ body a {
 
 h1,
 %h1 {
-	font-size: clamp(32px, 8vmin, 75px);
+	font-size: clamp(27px, 6vmin, 75px);
 	font-weight: bold;
 	letter-spacing: -0.02em;
 	line-height: 1.05;
@@ -105,7 +178,7 @@ h2,
 	font-size: clamp(28px, 5vmin, 40px);
 	color: $c-body;
 	font-weight: bold;
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 	letter-spacing: -0.02em;
 	line-height: 1.15;
 	&--highlighted {

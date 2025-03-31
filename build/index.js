@@ -14,42 +14,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const Component_ContactPopup = () => {
   document.addEventListener("DOMContentLoaded", () => {
-    // Selektieren der spezifischen Link-Elemente
-    const menuContactLink = document.querySelector("#menu-item-526.popup-trigger a");
-    const callMeLink = document.querySelector("[data-popup='kontakt'] a");
+    const contactTriggers = document.querySelectorAll(".popup-trigger a");
     const popup = document.getElementById("contact-popup");
     const closeBtn = document.querySelector(".close-popup");
+    const slideoutCloseBtn = document.querySelector(".slideout-exit");
+    console.log("📌 Anzahl gefundener Kontakt-Trigger (.popup-trigger a):", contactTriggers.length);
+    console.log("📋 Gefundene Trigger-Links:", contactTriggers);
+    console.log("📦 Popup-Element:", popup);
+    console.log("❌ Close-Button:", closeBtn);
+    console.log("⬅️ Slideout-Schließen-Button:", slideoutCloseBtn);
     if (!popup || !closeBtn) {
-      console.warn("Popup-Elemente nicht gefunden");
+      console.warn("⚠️ Popup-Elemente nicht gefunden.");
       return;
     }
-
-    // Eventlistener für den Menü-Kontakt-Link
-    if (menuContactLink) {
-      menuContactLink.addEventListener("click", event => {
+    contactTriggers.forEach((link, index) => {
+      console.log(`➕ Füge Eventlistener zu Kontakt-Link ${index} hinzu:`, link);
+      link.addEventListener("click", event => {
         event.preventDefault();
-        popup.classList.add("open");
-      });
-    }
+        console.log(`✅ Kontakt-Link ${index} geklickt`);
 
-    // Eventlistener für den "Call me" Link
-    if (callMeLink) {
-      callMeLink.addEventListener("click", event => {
-        event.preventDefault();
-        popup.classList.add("open");
-      });
-    }
+        // Slideout schließen, falls aktiv
+        const isInSlideout = link.closest("#generate-slideout-menu");
+        if (isInSlideout && slideoutCloseBtn) {
+          console.log("🔒 Kontakt-Link ist im Slideout-Menü – schließe Menü.");
+          slideoutCloseBtn.click();
+        }
 
-    // Schließen des Popups bei Klick auf den Schließen-Button oder außerhalb des Popups
+        // Öffne das Popup
+        popup.classList.add("open");
+        console.log("🚪 Popup geöffnet");
+      });
+    });
     popup.addEventListener("click", event => {
       if (event.target === popup || event.target.closest(".close-popup")) {
+        console.log("❎ Popup wird geschlossen");
         popup.classList.remove("open");
       }
     });
-
-    // Optional: Popup mit Escape-Taste schließen
     document.addEventListener("keydown", event => {
       if (event.key === "Escape" && popup.classList.contains("open")) {
+        console.log("❎ Popup wird mit ESC geschlossen");
         popup.classList.remove("open");
       }
     });
@@ -141,7 +145,7 @@ const Slick = () => {
   // Hero-Slider (läuft ohne Pause)
   jQuery(".slider--hero").slick({
     dots: false,
-    arrows: true,
+    arrows: false,
     infinite: true,
     autoplay: true,
     pauseOnHover: false,
@@ -166,21 +170,21 @@ const Slick = () => {
     responsive: [{
       breakpoint: 992,
       settings: {
-        arrows: true,
+        arrows: false,
         autoplaySpeed: 1,
         speed: 8000
       }
     }, {
       breakpoint: 768,
       settings: {
-        arrows: true,
+        arrows: false,
         autoplaySpeed: 1,
         speed: 8000
       }
     }, {
       breakpoint: 480,
       settings: {
-        arrows: true,
+        arrows: false,
         autoplaySpeed: 1,
         speed: 8000
       }

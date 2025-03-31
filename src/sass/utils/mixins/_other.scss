@@ -20,12 +20,14 @@
 	h3,
 	h4 {
 		margin-top: 20px;
-		font-size: $f-sizeBody;
+		font-size: $f-sizeBodyMedium;
 		margin-bottom: 2px;
-		font-family: $font-family;
+		font-family: var(--gp-font--spectral);
+		font-weight: 700 !important;
 	}
 
 	a {
+		font-family: var(--gp-font--spectral);
 		@include no-link-color();
 	}
 

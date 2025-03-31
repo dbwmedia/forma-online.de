@@ -28,6 +28,7 @@ body button {
 
 	// Stile speziell für primary Buttons
 	&--primary {
+		padding: 1rem 2rem !important;
 		display: inline-flex;
 		align-items: center;
 		background-color: transparent;

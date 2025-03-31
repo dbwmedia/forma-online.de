@@ -8,10 +8,20 @@
 		grid-auto-rows: min-content; // Anpassung der Zeilenhöhe an den Inhalt
 		gap: $gap;
 		> div:not(.hero-img) {
+			padding: 0 0 var(--grid-gap) 0;
 			h1 {
 				padding: 0;
+				@include mq($until: $mobile) {
+					padding: var(--grid-gap) 0 0 0 !important;
+				}
 			}
-			padding: 0 0 $grid-gap 0;
+			h3 {
+				text-transform: uppercase;
+				font-size: $f-sizeBody;
+				strong {
+					font-weight: 500 !important;
+				}
+			}
 		}
 
 		.hero-img {
@@ -28,6 +38,13 @@
 		@media (max-width: $tablet) {
 			padding: 50px 0 0px 0;
 			grid-template-columns: 1fr; // Ändert auf eine Spalte
+
+			> div:not(.hero-img) {
+				h1 {
+					padding: 0;
+				}
+				padding: 0 0 0 0;
+			}
 
 			.hero-img {
 				grid-column: 1; // Nur eine Spalte belegen
@@ -85,6 +102,28 @@
 				}
 			}
 		}
+	}
+}
+
+.parent-pageid-257 {
+	@include mq($until: $tablet) {
+		.entry-content {
+			> div:nth-child(1) {
+				padding: 0 5% calc(var(--grid-gap) / 2) 5%;
+			}
+			> div:nth-child(2) {
+				padding: calc(var(--grid-gap) / 2) 5% calc(var(--grid-gap) / 2) 5%;
+			}
+			> div:nth-child(3) {
+				padding: calc(var(--grid-gap) / 2) 5% 0 5%;
+			}
+		}
+	}
+}
+
+body.full-width-content .entry-content {
+	@media (max-width: $laptop) {
+		padding: 0px $contentPaddingLaptop;
 	}
 }
 
