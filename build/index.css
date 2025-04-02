@@ -60,7 +60,7 @@
   opacity: 0.7;
 }
 .wp-core-ui.login #login h1 a {
-  background-image: url(https://wolter.dbw-development.de/wp-content/themes/childtheme/assets/img/logo.svg);
+  background-image: url(https://wolter.dbw-development.de/wp-content/themes/childtheme/assets/img/logo.avif);
   width: 80%;
   max-height: 120px;
   background-size: contain;
@@ -432,7 +432,7 @@
   display: block;
   width: 20px;
   height: 20px;
-  background-image: url("https://wolter.dbw-development.de/wp-content/themes/childtheme/assets/icons/arriw.svg");
+  background-image: url("https://wolter.dbw-development.de/wp-content/themes/childtheme/assets/icons/arrow.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -823,6 +823,12 @@ mark,
   padding: 0 0 calc(var(--grid-gap) / 2) 0;
 }
 
+@supports (contain-intrinsic-size: 300px 1500px) {
+  .lazy-wrapper {
+    contain: size;
+    contain-intrinsic-size: 300px 1500px;
+  }
+}
 #page {
   position: relative;
   overflow: unset;

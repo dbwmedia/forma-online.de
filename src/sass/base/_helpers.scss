@@ -50,7 +50,6 @@
 }
 
 .custom-site-footer .site-info {
-	
 	@include mq($until: $mobile) {
 		font-size: 10px !important;
 		a {
@@ -67,5 +66,13 @@
 	}
 	&--bottom {
 		padding: 0 0 calc(var(--grid-gap) / 2) 0;
+	}
+}
+
+// Prevent layout shifts before content loads
+@supports (contain-intrinsic-size: 300px 1500px) {
+	.lazy-wrapper {
+		contain: size;
+		contain-intrinsic-size: 300px 1500px;
 	}
 }
