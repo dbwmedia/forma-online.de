@@ -823,18 +823,6 @@ mark,
   padding: 0 0 calc(var(--grid-gap) / 2) 0;
 }
 
-@media (max-width: 768px) {
-  .parent-pageid-257 .entry-content .project-detail-wrapper {
-    padding: calc(var(--grid-gap) / 2) 5% 0 5%;
-  }
-  .parent-pageid-257 .entry-content .detail-wrapper-grid {
-    padding: calc(var(--grid-gap) / 2) 5% calc(var(--grid-gap) / 2) 5%;
-  }
-  .parent-pageid-257 .entry-content .project-detail-wrapper-end {
-    padding: 0 5% calc(var(--grid-gap) / 2) 5%;
-  }
-}
-
 #page {
   position: relative;
   overflow: unset;

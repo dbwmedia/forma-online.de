@@ -50,6 +50,7 @@
 }
 
 .custom-site-footer .site-info {
+	
 	@include mq($until: $mobile) {
 		font-size: 10px !important;
 		a {
@@ -66,21 +67,5 @@
 	}
 	&--bottom {
 		padding: 0 0 calc(var(--grid-gap) / 2) 0;
-	}
-}
-
-.parent-pageid-257 {
-	@include mq($until: $tablet) {
-		.entry-content {
-			.project-detail-wrapper {
-				padding: calc(var(--grid-gap) / 2) 5% 0 5%;
-			}
-			.detail-wrapper-grid {
-				padding: calc(var(--grid-gap) / 2) 5% calc(var(--grid-gap) / 2) 5%;
-			}
-			.project-detail-wrapper-end {
-				padding: 0 5% calc(var(--grid-gap) / 2) 5%;
-			}
-		}
 	}
 }
