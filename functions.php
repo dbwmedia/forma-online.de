@@ -11,6 +11,7 @@ require_once get_stylesheet_directory() . '/includes/directories.php';
 
 // dbw media  Specific Includes
 require_once get_stylesheet_directory() . '/includes/dbw/dbw-login.php';
+require_once get_stylesheet_directory() . '/includes/dbw/dbw-login-style.php';
 require_once get_stylesheet_directory() . '/includes/dbw/dbw-head.php';
 //require_once get_stylesheet_directory() . '/includes/cookie.php'; 
 
