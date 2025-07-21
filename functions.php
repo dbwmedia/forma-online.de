@@ -60,3 +60,19 @@ function custom_math_captcha_validation($result, $tag) {
 }
 add_filter('wpcf7_validate_text*', 'custom_math_captcha_validation', 20, 2);
 
+
+//------------------------------------------------
+// # Backende Style
+// ------------------------------------------------
+function mein_backend_custom_css() {
+    echo '<style>
+        #adminmenumain table.wp-list-table .column-taxonomy-product_brand {
+            width: auto;
+        }
+        table.wp-list-table .column-taxonomy-product_brand {
+            width: auto;
+        }
+    </style>';
+}
+add_action('admin_head', 'mein_backend_custom_css');
+
