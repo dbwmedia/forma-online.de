@@ -2639,6 +2639,15 @@ section.projects-overview-page-grid .project .project-detail-text {
   border: 1px solid #222222;
   background-color: transparent;
 }
+.dbw-custom-product-container .product .summary .wcpay-express-checkout-wrapper {
+  order: 8;
+}
+.dbw-custom-product-container .product .summary .ppcp-messages {
+  order: 9;
+}
+.dbw-custom-product-container .product .summary .ppc-button-wrapper {
+  order: 10;
+}
 .dbw-custom-product-container .product .summary .product_meta {
   display: none;
 }
@@ -2697,6 +2706,20 @@ section.projects-overview-page-grid .project .project-detail-text {
 
 .woocommerce-breadcrumb {
   display: none;
+}
+
+.woocommerce-message {
+  border-top-color: #222222;
+  border-top: 1px;
+}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+  border-top: 1px solid #222222;
+  border-bottom: 1px solid #222222;
+  border-color: #222222;
+  background-color: #fff;
 }
 
 #contact-popup {
@@ -3329,7 +3352,7 @@ body button.single_add_to_cart_button.disabled,
 body button.single_add_to_cart_button:disabled,
 body button.single_add_to_cart_button[disabled],
 body button.single_add_to_cart_button.wc-variation-selection-needed {
-  background: #64646c !important;
+  background: #f2f2f2 !important;
 }
 
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt,
@@ -3420,6 +3443,15 @@ body #content .gb-tabs .gb-tabs__buttons .gb-block-is-current {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+button.wc-block-components-quantity-selector__button,
+.wc-block-cart-item__remove-link {
+  padding: 0 !important;
+}
+
+button.wc-block-components-quantity-selector__button[disabled] {
+  opacity: 0.5;
 }
 /*!*************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/slick-carousel/slick/slick.css ***!

@@ -191,7 +191,7 @@ body button.single_add_to_cart_button {
 	&:disabled,
 	&[disabled],
 	&.wc-variation-selection-needed {
-		background: $c-secondary !important;
+		background: $c-grayLight !important;
 	}
 }
 
@@ -292,4 +292,13 @@ body #content .gb-tabs {
 	justify-content: center;
 	gap: 10px;
 	flex-wrap: wrap;
+}
+
+button.wc-block-components-quantity-selector__button,
+.wc-block-cart-item__remove-link {
+	padding: 0 !important;
+}
+
+button.wc-block-components-quantity-selector__button[disabled] {
+	opacity: 0.5;
 }

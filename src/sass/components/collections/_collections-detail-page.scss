@@ -175,6 +175,18 @@
 				}
 			}
 
+			.wcpay-express-checkout-wrapper {
+				order: 8;
+			}
+
+			.ppcp-messages {
+				order: 9;
+			}
+
+			.ppc-button-wrapper {
+				order: 10;
+			}
+
 			.product_meta {
 				display: none;
 			}
@@ -257,4 +269,18 @@
 
 .woocommerce-breadcrumb {
 	display: none;
+}
+
+.woocommerce-message {
+	border-top-color: $c-black;
+	border-top: 1px;
+}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+	border-top: 1px solid $c-black;
+	border-bottom: 1px solid $c-black;
+	border-color: $c-black;
+	background-color: $c-white;
 }
