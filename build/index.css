@@ -2519,15 +2519,37 @@ section.projects-overview-page-grid .project .project-detail-text {
   border-top: 1px solid rgb(0, 0, 0);
   position: sticky;
   top: 150px;
-  max-height: calc(100vh - 50px);
-  overflow: auto;
+  height: calc(100vh - 150px);
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 50px 0;
   margin: 0 6%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 150px;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+.dbw-custom-product-container .product .summary:hover {
+  overflow-y: auto;
+}
+.dbw-custom-product-container .product .summary::-webkit-scrollbar {
+  width: 8px;
+}
+.dbw-custom-product-container .product .summary::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+.dbw-custom-product-container .product .summary::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+.dbw-custom-product-container .product .summary::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 .dbw-custom-product-container .product .summary > * {
   max-width: 80%;
+  flex-shrink: 0;
 }
 .dbw-custom-product-container .product .summary .product_title {
   order: 1;
@@ -2557,6 +2579,9 @@ section.projects-overview-page-grid .project .project-detail-text {
 .dbw-custom-product-container .product .summary .woocommerce-product-details__short-description p {
   font-size: 22px;
   font-weight: bold;
+}
+.dbw-custom-product-container .product .summary .wc-gzd-additional-info {
+  order: 3;
 }
 .dbw-custom-product-container .product .summary .dbw-product-info-container {
   order: 5;
@@ -2671,8 +2696,8 @@ section.projects-overview-page-grid .project .project-detail-text {
   }
   .dbw-custom-product-container .product .summary {
     border-top: none;
-    max-height: -moz-fit-content;
-    max-height: fit-content;
+    height: auto;
+    max-height: none;
     display: block;
     margin: var(--grid-gap) 0;
     margin-bottom: var(--grid-gap) !important;

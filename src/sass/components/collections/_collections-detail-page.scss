@@ -34,15 +34,43 @@
 			border-top: $b-border;
 			position: sticky;
 			top: 150px;
-			max-height: calc(100vh - 50px);
-			overflow: auto;
+			height: calc(100vh - 150px); // Feste Höhe statt max-height
+			overflow-y: auto; // Scrollbar nur wenn nötig
+			overflow-x: hidden; // Horizontales Scrolling verhindern
 			padding: 50px 0;
 			margin: 0 $contentPadding;
 			display: flex;
 			flex-direction: column;
+			margin-bottom: 150px;
+
+			// Wichtig für Mausrad-Scrolling
+			overscroll-behavior: contain; // Verhindert Event-Propagation
+			scroll-behavior: smooth; // Sanftes Scrolling
+
+			// Event-Handling für Mausrad sicherstellen
+			&:hover {
+				overflow-y: auto; // Auch beim Hover nur wenn nötig
+			}
+
+			// Scrollbar-Styling für bessere UX
+			&::-webkit-scrollbar {
+				width: 8px; // Etwas breiter für bessere Sichtbarkeit
+			}
+			&::-webkit-scrollbar-track {
+				background: rgba(0, 0, 0, 0.05);
+				border-radius: 4px;
+			}
+			&::-webkit-scrollbar-thumb {
+				background: rgba(0, 0, 0, 0.3);
+				border-radius: 4px;
+			}
+			&::-webkit-scrollbar-thumb:hover {
+				background: rgba(0, 0, 0, 0.5);
+			}
 
 			> * {
 				max-width: 80%;
+				flex-shrink: 0; // Verhindert Zusammendrücken der Elemente
 			}
 
 			.product_title {
@@ -78,6 +106,10 @@
 					font-size: 22px;
 					font-weight: bold;
 				}
+			}
+
+			.wc-gzd-additional-info {
+				order: 3;
 			}
 
 			.dbw-product-info-container {
@@ -222,7 +254,8 @@
 
 			.summary {
 				border-top: none;
-				max-height: fit-content;
+				height: auto; // Höhe für Mobile zurücksetzen
+				max-height: none; // Max-height entfernen
 				display: block;
 				margin: $grid-gap 0;
 				margin-bottom: $grid-gap !important;
@@ -231,7 +264,7 @@
 				width: 100% !important;
 				min-height: 100%;
 				position: static;
-				overflow: visible;
+				overflow: visible; // Overflow für Mobile zurücksetzen
 				> * {
 					max-width: 100%;
 				}
