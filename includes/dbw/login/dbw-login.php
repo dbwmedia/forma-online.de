@@ -1,6 +1,7 @@
 <?php
 /**
  * Custom Login Security
+ * Version 1.1
  * Versteckt Standard WordPress Login und erstellt /zentrale URL
  */
 if (!defined('ABSPATH')) {

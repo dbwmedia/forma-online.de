@@ -1,6 +1,9 @@
 @use "../../global" as *;
 
 .collection-wrapper {
+	.wc-block-components-notices {
+		display: none;
+	}
 	.collections-list {
 		display: flex;
 		justify-content: space-between;

@@ -132,6 +132,10 @@ function custom_dark_mode_login_page() {
             position: relative !important;
             z-index: 10 !important;
             padding: 0 !important;
+            display: flex;
+            flex-direction: column;
+            min-height: 70vh;
+            justify-content: center;
         }
         
         /* Desktop spezifische Anpassungen */
@@ -162,15 +166,8 @@ function custom_dark_mode_login_page() {
             text-align: center !important;
             margin-bottom: 30px !important;
         }
-
-        #login{
-            display: flex;
-            flex-direction: column;
-            min-height: 70vh;
-            justify-content: center;
-        }
         
-        #loginform, #lostpasswordform, #registerform {
+        #loginform, #lostpasswordform, #registerform, .admin-email-confirm-form {
             background: var(--glass-bg) !important;
             border: 1px solid var(--border-color) !important;
             border-radius: 20px !important;
@@ -187,14 +184,15 @@ function custom_dark_mode_login_page() {
         }
         
         @media (min-width: 1024px) {
-            #loginform, #lostpasswordform, #registerform {
+            #loginform, #lostpasswordform, #registerform, .admin-email-confirm-form {
                 padding: 40px !important;
             }
         }
         
         #loginform::before,
         #lostpasswordform::before,
-        #registerform::before {
+        #registerform::before,
+        .admin-email-confirm-form::before {
             content: "" !important;
             position: absolute !important;
             top: 0 !important;
@@ -209,7 +207,8 @@ function custom_dark_mode_login_page() {
         
         body.light-mode #loginform,
         body.light-mode #lostpasswordform,
-        body.light-mode #registerform {
+        body.light-mode #registerform,
+        body.light-mode .admin-email-confirm-form {
             box-shadow: 
                 0 32px 64px -12px rgba(0, 0, 0, 0.08), 
                 0 0 0 1px rgba(255, 255, 255, 0.05),
@@ -239,7 +238,117 @@ function custom_dark_mode_login_page() {
             }
         }
         
-        /* Verbesserte Eingabefelder - breiter und weniger eingequetscht */
+        /* Admin E-Mail Confirm Specific Styles */
+        .admin-email__heading {
+            color: var(--font-color) !important;
+            font-size: 24px !important;
+            font-weight: 600 !important;
+            text-align: center !important;
+            margin: 0 0 25px 0 !important;
+            line-height: 1.3 !important;
+        }
+        
+        .admin-email__details {
+            color: var(--font-color) !important;
+            font-size: 15px !important;
+            line-height: 1.6 !important;
+            margin: 0 0 16px 0 !important;
+            text-align: center !important;
+        }
+        
+        .admin-email__details strong {
+            color: var(--primary-color) !important;
+            font-weight: 600 !important;
+        }
+        
+        .admin-email__details a {
+            color: var(--primary-color) !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+        }
+        
+        .admin-email__details a:hover {
+            color: var(--primary-hover) !important;
+        }
+        
+        .admin-email__details a::after {
+            content: "" !important;
+            position: absolute !important;
+            bottom: -2px !important;
+            left: 0 !important;
+            width: 0 !important;
+            height: 1px !important;
+            background: var(--primary-color) !important;
+            transition: width 0.3s ease !important;
+        }
+        
+        .admin-email__details a:hover::after {
+            width: 100% !important;
+        }
+        
+        .admin-email__actions {
+            margin-top: 30px !important;
+            text-align: center !important;
+        }
+        
+        .admin-email__actions-primary {
+            display: flex !important;
+            gap: 12px !important;
+            justify-content: center !important;
+            margin-bottom: 20px !important;
+        }
+        
+        .admin-email__actions-secondary {
+            margin-top: 20px !important;
+        }
+        
+        .admin-email__actions-secondary a {
+            color: var(--text-muted) !important;
+            font-size: 13px !important;
+            text-decoration: none !important;
+            transition: color 0.3s ease !important;
+            position: relative !important;
+        }
+        
+        .admin-email__actions-secondary a:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .admin-email__actions-secondary a::after {
+            content: "" !important;
+            position: absolute !important;
+            bottom: -2px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 0 !important;
+            height: 1px !important;
+            background: var(--primary-color) !important;
+            transition: width 0.3s ease !important;
+        }
+        
+        .admin-email__actions-secondary a:hover::after {
+            width: 100% !important;
+        }
+        
+        /* Mobile Admin Email Anpassungen */
+        @media (max-width: 768px) {
+            .admin-email__actions-primary {
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+            
+            .admin-email__heading {
+                font-size: 20px !important;
+            }
+            
+            .admin-email__details {
+                font-size: 14px !important;
+                text-align: left !important;
+            }
+        }
+        
+        /* Verbesserte Eingabefelder */
         input[type="text"], 
         input[type="password"], 
         input[type="email"] {
@@ -292,8 +401,8 @@ function custom_dark_mode_login_page() {
             font-size: 14px !important;
         }
         
-        /* Dezenterer Button - weniger aufdringlich */
-        .button-primary {
+        /* Primary Button Styling */
+        .button-primary, .button.button-primary {
             background: var(--primary-color) !important;
             border: none !important;
             border-radius: 10px !important;
@@ -308,9 +417,20 @@ function custom_dark_mode_login_page() {
             overflow: hidden !important;
             letter-spacing: 0.3px !important;
             opacity: 0.95 !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+            min-height: 48px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
         }
         
-        .button-primary::before {
+        .admin-email__actions-primary .button.button-primary {
+            flex: 1 !important;
+            max-width: none !important;
+        }
+        
+        .button-primary::before, .button.button-primary::before {
             content: "" !important;
             position: absolute !important;
             top: 0 !important;
@@ -321,38 +441,49 @@ function custom_dark_mode_login_page() {
             transition: left 0.6s ease !important;
         }
         
-        .button-primary:hover::before {
+        .button-primary:hover::before, .button.button-primary:hover::before {
             left: 100% !important;
         }
         
-        .button-primary:hover {
+        .button-primary:hover, .button.button-primary:hover {
             transform: translateY(-1px) !important;
             box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3) !important;
             opacity: 1 !important;
         }
         
-        .button-primary:active {
+        .button-primary:active, .button.button-primary:active {
             transform: translateY(0) !important;
         }
         
-        /* Loading Animation für Button */
-        .button-primary.loading::after {
-            content: "" !important;
-            position: absolute !important;
-            width: 18px !important;
-            height: 18px !important;
-            margin: auto !important;
-            border: 2px solid transparent !important;
-            border-radius: 50% !important;
-            border-top-color: white !important;
-            animation: spinner 0.6s linear infinite !important;
+        /* Secondary Button Styling für "Aktualisieren" Link */
+        .button:not(.button-primary) {
+            background: var(--input-bg) !important;
+            border: 2px solid var(--border-color) !important;
+            color: var(--font-color) !important;
+            border-radius: 10px !important;
+            padding: 12px 24px !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            cursor: pointer !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            text-decoration: none !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            min-height: 48px !important;
+            flex: 1 !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
         }
         
-        @keyframes spinner {
-            to { transform: rotate(360deg); }
+        .button:not(.button-primary):hover {
+            border-color: var(--primary-color) !important;
+            color: var(--primary-color) !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15) !important;
         }
         
-        /* Verbesserte Nachrichten-Styling */
+        /* Nachrichten-Styling */
         .message, #login_error, .login .message {
             display: flex;
             border-radius: 10px !important;
@@ -398,7 +529,7 @@ function custom_dark_mode_login_page() {
             color: var(--success-color) !important;
         }
         
-        /* WordPress Standard-Links Styling */
+        /* Navigation Links */
         #nav, #backtoblog {
             text-align: center !important;
             margin-top: 24px !important;
@@ -415,7 +546,7 @@ function custom_dark_mode_login_page() {
             color: var(--primary-color) !important;
         }
         
-        /* Language Switcher in Ecke verschieben */
+        /* Language Switcher */
         .language-switcher {
             position: fixed !important;
             bottom: 20px !important;
@@ -482,7 +613,7 @@ function custom_dark_mode_login_page() {
             margin: 0 !important;
         }
         
-        /* iOS 26 Style Theme Switch */
+        /* iOS Style Theme Switch */
         .theme-switch-wrapper {
             position: fixed !important;
             top: 20px !important;
@@ -557,217 +688,13 @@ function custom_dark_mode_login_page() {
             to { opacity: 1; }
         }
         
-        /* Password Reset Form Styling */
-        #resetpassform {
-            background: var(--glass-bg) !important;
-            border: 1px solid var(--border-color) !important;
-            border-radius: 20px !important;
-            box-shadow: 
-                0 32px 64px -12px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-            padding: 35px !important;
-            margin-top: 20px !important;
-            backdrop-filter: blur(20px) saturate(180%) !important;
-            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-            animation: fadeInUp 0.8s ease-out 0.2s both !important;
-            position: relative !important;
-            overflow: hidden !important;
-        }
-        
-        #resetpassform::before {
-            content: "" !important;
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            height: 1px !important;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.5), 
-                transparent) !important;
-        }
-        
-        .reset-pass-submit {
-            display: flex !important;
-            gap: 12px !important;
-            margin-top: 24px !important;
-        }
-        
-        .wp-pwd {
-            position: relative !important;
-        }
-        
-        .wp-generate-pw {
-            background: transparent !important;
-            border: 2px solid var(--border-color) !important;
-            color: var(--font-color) !important;
-            border-radius: 10px !important;
-            padding: 12px 24px !important;
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            cursor: pointer !important;
-        }
-        
-        .wp-generate-pw:hover {
-            border-color: var(--primary-color) !important;
-            background: var(--primary-color) !important;
-            color: white !important;
-            transform: translateY(-1px) !important;
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3) !important;
-        }
-        
-        #pass-strength-result {
-            margin-top: 8px !important;
-            padding: 8px !important;
-            border-radius: 6px !important;
-            text-align: center !important;
-            font-size: 13px !important;
-        }
-        
-        #pass-strength-result.strong {
-            background: rgba(16, 185, 129, 0.1) !important;
-            color: var(--success-color) !important;
-            border: 1px solid var(--success-color) !important;
-        }
-        
-        #pass-strength-result.good {
-            background: rgba(132, 204, 22, 0.1) !important;
-            color: #84cc16 !important;
-            border: 1px solid #84cc16 !important;
-        }
-        
-        #pass-strength-result.bad {
-            background: rgba(239, 68, 68, 0.1) !important;
-            color: var(--error-color) !important;
-            border: 1px solid var(--error-color) !important;
-        }
-        
-        #pass-strength-result.short {
-            background: rgba(245, 158, 11, 0.1) !important;
-            color: var(--warning-color) !important;
-            border: 1px solid var(--warning-color) !important;
-        }
-        
-        .indicator-hint {
-            font-size: 12px !important;
-            line-height: 1.5 !important;
-            color: var(--text-muted) !important;
-            margin-top: 12px !important;
-            padding: 12px !important;
-            background: rgba(99, 102, 241, 0.05) !important;
-            border-radius: 8px !important;
-            border: 1px solid rgba(99, 102, 241, 0.1) !important;
-        }
-        
-        .pw-weak {
-            margin-top: 12px !important;
-            padding: 12px !important;
-            background: rgba(239, 68, 68, 0.05) !important;
-            border-radius: 8px !important;
-            border: 1px solid rgba(239, 68, 68, 0.2) !important;
-        }
-        
-        .pw-weak label {
-            color: var(--error-color) !important;
-            font-weight: 500 !important;
-            cursor: pointer !important;
-        }
-        
-        /* Notice Messages auf Reset-Seite */
-        .notice.reset-pass {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05)) !important;
-            border-radius: 10px !important;
-            padding: 14px 18px !important;
-            margin: 16px 0 !important;
-            border: none !important;
-            color: var(--font-color) !important;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1) !important;
-            font-size: 14px !important;
-        }
-        
-        .notice.reset-pass::before {
-            content: "ℹ️" !important;
-            margin-right: 8px !important;
-        }
-        
-        /* Buttons im Reset-Form konsistent stylen */
-        #resetpassform .button-secondary {
-            background: var(--input-bg) !important;
-            border: 2px solid var(--border-color) !important;
-            color: var(--font-color) !important;
-            transition: all 0.3s ease !important;
-            border-radius: 10px !important;
-            padding: 12px 24px !important;
-            font-size: 15px !important;
-            font-weight: 500 !important;
-        }
-        
-        #resetpassform .button-secondary:hover {
-            border-color: var(--primary-color) !important;
-            color: var(--primary-color) !important;
-        }
-        
-        .login-footer {
-            text-align: center !important;
-            margin-top: 40px !important;
-            padding: 20px !important;
-            animation: fadeIn 1s ease-out 0.5s both !important;
-        }
-        
-        .login-footer p {
-            color: var(--text-muted) !important;
-            font-size: 12px !important;
-            margin: 0 !important;
-            letter-spacing: 0.3px !important;
-        }
-        
-        .login-footer a {
-            color: var(--primary-color) !important;
-            font-weight: 500 !important;
-            text-decoration: none !important;
-            position: relative !important;
-        }
-        
-        .login-footer a::after {
-            content: "" !important;
-            position: absolute !important;
-            bottom: -2px !important;
-            left: 0 !important;
-            width: 0 !important;
-            height: 1px !important;
-            background: var(--primary-color) !important;
-            transition: width 0.3s ease !important;
-        }
-        
-        .login-footer a:hover::after {
-            width: 100% !important;
-        }
-        
-        /* Desktop Spezifische Anpassungen - entfernt */
-        @media (min-width: 1024px) {
-            .login-footer {
-                margin-top: 40px !important;
-            }
-            
-            .language-switcher {
-                bottom: 20px !important;
-                left: 20px !important;
-            }
-            
-            .theme-switch-wrapper {
-                top: 20px !important;
-                right: 20px !important;
-            }
-        }
-        
         /* Responsive Design */
         @media (max-width: 768px) {
             #login {
                 padding: 5% 15px 0 !important;
             }
             
-            #loginform, #lostpasswordform, #registerform {
+            #loginform, #lostpasswordform, #registerform, .admin-email-confirm-form {
                 padding: 25px 20px !important;
             }
             
@@ -778,8 +705,7 @@ function custom_dark_mode_login_page() {
             }
             
             body .language-switcher {
-            display: none !important
-
+                display: none !important;
             }
             
             input[type="text"], 
@@ -795,7 +721,7 @@ function custom_dark_mode_login_page() {
                 padding: 3% 10px 0 !important;
             }
             
-            #loginform, #lostpasswordform, #registerform {
+            #loginform, #lostpasswordform, #registerform, .admin-email-confirm-form {
                 padding: 20px 15px !important;
                 border-radius: 16px !important;
             }
@@ -806,7 +732,7 @@ function custom_dark_mode_login_page() {
             }
         }
         
-        /* Accessibility Improvements */
+        /* Accessibility */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
@@ -819,7 +745,6 @@ function custom_dark_mode_login_page() {
             }
         }
         
-        /* Focus Visible für Barrierefreiheit */
         *:focus-visible {
             outline: 2px solid var(--primary-color) !important;
             outline-offset: 2px !important;
@@ -843,49 +768,16 @@ function custom_dark_mode_login_page() {
             background: var(--primary-hover) !important;
         }
         
-        /* Password visibility toggle */
-        .dashicons-visibility, .dashicons-hidden {
-            color: var(--text-muted) !important;
-            cursor: pointer !important;
-            transition: color 0.3s ease !important;
-        }
-        
-        .dashicons-visibility:hover, .dashicons-hidden:hover {
-            color: var(--primary-color) !important;
-        }
-        
-        /* Loading states */
-        .button-primary:disabled {
-            opacity: 0.6 !important;
-            cursor: not-allowed !important;
-            transform: none !important;
-        }
-        
         /* Placeholder styling */
         ::placeholder {
             color: var(--text-muted) !important;
             opacity: 0.7 !important;
         }
-        
-        /* Password toggle button fix */
-        .login .button.wp-hide-pw {
-            min-height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px !important;
-        }
-        
-        .login .button.wp-hide-pw .dashicons {
-            top: auto;
-        }
-        
-        /* Desktop Branding Styles entfernt */
     </style>';
 }
 add_action('login_head', 'custom_dark_mode_login_page');
 
-// Erweiterte Theme-Switch Funktionalität mit iOS 26 Style
+// Theme-Switch Funktionalität
 function add_dark_light_mode_switcher() {
     echo '<div class="theme-switch-wrapper">
             <span class="mode-icon moon">🌙</span>
@@ -905,7 +797,6 @@ function add_dark_light_mode_switcher() {
                 const themeSwitch = document.querySelector("#checkbox");
                 const body = document.body;
                 
-                // Erweiterte Theme-Präferenz-Logik
                 const getThemePreference = () => {
                     const saved = localStorage.getItem("dbw-login-theme");
                     if (saved) return saved;
@@ -926,7 +817,6 @@ function add_dark_light_mode_switcher() {
                     themeSwitch.checked = false;
                 }
                 
-                // Theme Switch Handler
                 themeSwitch.addEventListener("change", function() {
                     if (themeSwitch.checked) {
                         body.classList.remove("dark-mode");
@@ -940,8 +830,8 @@ function add_dark_light_mode_switcher() {
                 });
                 
                 // Premium Form Validation
-                const form = document.getElementById("loginform");
-                const submitButton = document.getElementById("wp-submit");
+                const form = document.getElementById("loginform") || document.querySelector(".admin-email-confirm-form");
+                const submitButton = document.getElementById("wp-submit") || document.getElementById("correct-admin-email");
                 
                 if (form && submitButton) {
                     form.addEventListener("submit", function(e) {
@@ -977,42 +867,6 @@ function add_dark_light_mode_switcher() {
                     });
                 });
                 
-                // Password strength indicator nur für Reset-Seiten
-                const currentAction = new URLSearchParams(window.location.search).get("action");
-                if (currentAction === "rp" || currentAction === "resetpass") {
-                    const passwordInput = document.getElementById("pass1");
-                    if (passwordInput) {
-                        const strengthIndicator = document.createElement("div");
-                        strengthIndicator.className = "password-strength";
-                        passwordInput.parentElement.appendChild(strengthIndicator);
-                        
-                        passwordInput.addEventListener("input", function() {
-                            const strength = checkPasswordStrength(this.value);
-                            updateStrengthIndicator(strengthIndicator, strength);
-                        });
-                    }
-                }
-                
-                function checkPasswordStrength(password) {
-                    let strength = 0;
-                    if (password.length >= 8) strength++;
-                    if (password.length >= 12) strength++;
-                    if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
-                    if (/\d/.test(password)) strength++;
-                    if (/[^a-zA-Z\d]/.test(password)) strength++;
-                    return strength;
-                }
-                
-                function updateStrengthIndicator(indicator, strength) {
-                    const messages = ["", "Schwach", "Mittel", "Gut", "Stark", "Sehr stark"];
-                    const colors = ["", "#ef4444", "#f59e0b", "#eab308", "#84cc16", "#10b981"];
-                    
-                    indicator.textContent = messages[strength];
-                    indicator.style.color = colors[strength];
-                    indicator.style.fontSize = "12px";
-                    indicator.style.marginTop = "4px";
-                }
-                
                 // Smooth page transitions
                 setTimeout(() => {
                     document.body.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
@@ -1022,7 +876,7 @@ function add_dark_light_mode_switcher() {
 }
 add_action('login_footer', 'add_dark_light_mode_switcher');
 
-// Entferne WordPress-Generator und andere Meta-Infos auf Login-Seite
+// Entferne WordPress-Generator
 function remove_login_wp_generator() {
     remove_action('login_head', 'wp_generator');
 }
@@ -1045,18 +899,18 @@ add_action('init', 'add_login_security_headers');
 function custom_login_errors($error) {
     $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
     
-    $messages = [
-        'de' => [
+    $messages = array(
+        'de' => array(
             'invalid' => '<strong>Anmeldung fehlgeschlagen:</strong> Die eingegebenen Anmeldedaten sind nicht korrekt.',
             'empty' => '<strong>Fehler:</strong> Bitte geben Sie Benutzername und Passwort ein.',
             'rate_limit' => '<strong>Sicherheitshinweis:</strong> Zu viele Anmeldeversuche. Bitte warten Sie einen Moment.'
-        ],
-        'en' => [
+        ),
+        'en' => array(
             'invalid' => '<strong>Login failed:</strong> The credentials provided are incorrect.',
             'empty' => '<strong>Error:</strong> Please enter username and password.',
             'rate_limit' => '<strong>Security notice:</strong> Too many login attempts. Please wait a moment.'
-        ]
-    ];
+        )
+    );
     
     $userLang = isset($messages[$lang]) ? $lang : 'en';
     
@@ -1233,7 +1087,7 @@ function add_accessibility_features() {
         document.body.insertBefore(skipLink, document.body.firstChild);
         
         // ARIA labels
-        const form = document.getElementById('loginform');
+        const form = document.getElementById('loginform') || document.querySelector('.admin-email-confirm-form');
         if (form) {
             form.setAttribute('aria-label', 'Login Form');
             
@@ -1267,7 +1121,7 @@ function add_accessibility_features() {
     
     /* High contrast mode support */
     @media (prefers-contrast: high) {
-        #loginform {
+        #loginform, .admin-email-confirm-form {
             border: 3px solid var(--font-color) !important;
         }
         
@@ -1284,44 +1138,6 @@ function add_accessibility_features() {
     <?php
 }
 add_action('login_footer', 'add_accessibility_features');
-
-// Performance Monitoring
-function add_performance_tracking() {
-    ?>
-    <script>
-    // Performance tracking
-    window.addEventListener('load', function() {
-        if ('performance' in window) {
-            const perfData = window.performance.timing;
-            const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-            console.log('DBW Login Page Load Time:', pageLoadTime + 'ms');
-        }
-    });
-    </script>
-    <?php
-}
-add_action('login_footer', 'add_performance_tracking');
-
-// Browser Compatibility Warnings
-function add_browser_compatibility_check() {
-    ?>
-    <script>
-    // Browser compatibility check
-    (function() {
-        const isIE = /MSIE|Trident/.test(navigator.userAgent);
-        const isOldEdge = /Edge\/\d+/.test(navigator.userAgent) && !/Edg\//.test(navigator.userAgent);
-        
-        if (isIE || isOldEdge) {
-            const warning = document.createElement('div');
-            warning.style.cssText = 'background: #f59e0b; color: #000; padding: 10px; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 9999;';
-            warning.innerHTML = 'Sie verwenden einen veralteten Browser. Für die beste Erfahrung empfehlen wir ein Update auf einen modernen Browser.';
-            document.body.appendChild(warning);
-        }
-    })();
-    </script>
-    <?php
-}
-add_action('login_footer', 'add_browser_compatibility_check');
 
 // Custom Login Page Title
 function custom_login_title($title) {
@@ -1340,84 +1156,6 @@ function add_resource_hints() {
     <?php
 }
 add_action('login_head', 'add_resource_hints', 1);
-
-// Custom Maintenance Mode für Login
-function check_maintenance_mode() {
-    $maintenance_mode = get_option('dbw_maintenance_mode', false);
-    
-    if ($maintenance_mode && !current_user_can('administrator')) {
-        wp_die(
-            '<div style="text-align: center; padding: 50px; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
-                <h1 style="color: #6366f1;">Wartungsmodus</h1>
-                <p>Wir führen gerade Wartungsarbeiten durch. Bitte versuchen Sie es später erneut.</p>
-                <p style="margin-top: 30px;"><small>DBW Media - Ihre Digitalagentur</small></p>
-            </div>',
-            'Wartungsmodus',
-            array('response' => 503)
-        );
-    }
-}
-add_action('login_init', 'check_maintenance_mode');
-
-// Two-Factor Authentication Vorbereitung
-function prepare_two_factor_auth() {
-    ?>
-    <script>
-    // Placeholder für 2FA Integration
-    document.addEventListener('DOMContentLoaded', function() {
-        const loginForm = document.getElementById('loginform');
-        if (loginForm) {
-            // Hier könnte 2FA-Code-Feld dynamisch eingefügt werden
-            const has2FA = false; // Würde aus User-Meta geladen
-            
-            if (has2FA) {
-                const twoFactorField = document.createElement('p');
-                twoFactorField.innerHTML = `
-                    <label for="2fa_code">Zwei-Faktor-Code<br>
-                    <input type="text" name="2fa_code" id="2fa_code" class="input" size="20" autocomplete="one-time-code" /></label>
-                `;
-                loginForm.insertBefore(twoFactorField, loginForm.querySelector('.submit'));
-            }
-        }
-    });
-    </script>
-    <?php
-}
-add_action('login_footer', 'prepare_two_factor_auth');
-
-// Analytics und Tracking (DSGVO-konform)
-function add_privacy_compliant_analytics() {
-    ?>
-    <script>
-    // Anonymisierte Analytics ohne Cookies
-    (function() {
-        // Nur wenn User zugestimmt hat (würde aus Cookie/LocalStorage gelesen)
-        const hasConsent = false; // Placeholder
-        
-        if (hasConsent && typeof gtag !== 'undefined') {
-            // Event tracking
-            const trackEvent = (category, action, label) => {
-                gtag('event', action, {
-                    'event_category': category,
-                    'event_label': label,
-                    'anonymize_ip': true
-                });
-            };
-            
-            // Track login form interactions
-            document.getElementById('user_login').addEventListener('focus', () => {
-                trackEvent('Login', 'input_focus', 'username');
-            });
-            
-            document.getElementById('wp-submit').addEventListener('click', () => {
-                trackEvent('Login', 'submit_attempt', 'login_form');
-            });
-        }
-    })();
-    </script>
-    <?php
-}
-add_action('login_footer', 'add_privacy_compliant_analytics');
 
 // Ende der Funktionen
 ?>

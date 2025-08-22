@@ -775,6 +775,17 @@ mark,
   padding: 0 0 var(--grid-gap) 0;
 }
 
+.legal h2,
+.legal h3,
+.legal h4 {
+  font-family: var(--gp-font--spectral);
+  font-size: clamp(22px, 5vmin, 28px);
+  margin-top: 25px;
+}
+.legal .woocommerce-gzd {
+  margin-top: 15px;
+}
+
 .valign--center {
   align-items: center;
 }
@@ -2349,6 +2360,9 @@ section.projects-overview-page-grid .project .project-detail-text {
   }
 }
 
+.collection-wrapper .wc-block-components-notices {
+  display: none;
+}
 .collection-wrapper .collections-list {
   display: flex;
   justify-content: space-between;

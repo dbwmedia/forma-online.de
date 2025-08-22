@@ -279,3 +279,17 @@ mark,
 .subheadline {
 	padding: 0 0 $grid-gap 0;
 }
+
+.legal {
+	h2,
+	h3,
+	h4 {
+		font-family: var(--gp-font--spectral);
+		font-size: clamp(22px, 5vmin, 28px);
+		margin-top: 25px;
+	}
+
+	.woocommerce-gzd {
+		margin-top: 15px;
+	}
+}
