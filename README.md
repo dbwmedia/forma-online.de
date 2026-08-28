@@ -80,4 +80,4 @@ Die Info `npm notice` `New minor version of npm available` erhaltet ihr, wenn ei
 **Bitte an alle:** Schaut einfach regelmäßig nach, ob eure Versionen noch aktuell sind. Im Falle des Falles habt ihr ansonsten nämlich eventuell eine veraltetes, unsicheres "Programm" auf euren PCs, über das regelmäßig gedownloadet wird - ich denke, es ist klar, warum hier regelmäßige Updates wichtig sind.
 
 Mit dem Befehl `npm doctor` werden eure **npm**- und **node**-Versionen in einem Rutsch geprüft und schlägt im Falle eines Updates folgende Befehle vor:<br>
-_[Bild folgt noch // TODO FW]_# wolter-furniture.de
+_[Bild folgt noch // TODO FW]_# forma-online.de

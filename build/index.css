@@ -60,7 +60,7 @@
   opacity: 0.7;
 }
 .wp-core-ui.login #login h1 a {
-  background-image: url(https://wolter-furniture.de/wp-content/themes/childtheme/assets/img/logo.avif);
+  background-image: url(https://forma-online.de/wp-content/themes/childtheme/assets/img/logo.avif);
   width: 80%;
   max-height: 120px;
   background-size: contain;
@@ -191,7 +191,7 @@
 /* Die Schriftart wird möglicherweise global gebraucht */
 @font-face {
   font-family: "slick";
-  src: url("https://wolter-furniture.de/wp-content/themes/childtheme/assets/fonts/slick.woff");
+  src: url("https://forma-online.de/wp-content/themes/childtheme/assets/fonts/slick.woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -432,7 +432,7 @@
   display: block;
   width: 20px;
   height: 20px;
-  background-image: url("https://wolter-furniture.de/wp-content/themes/childtheme/assets/icons/arrow.svg");
+  background-image: url("https://forma-online.de/wp-content/themes/childtheme/assets/icons/arrow.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -490,7 +490,7 @@
   width: 48px;
   height: 48px;
   overflow: visible;
-  background-image: url("https://wolter-furniture.de/wp-content/themes/childtheme/assets/icons/arrow.svg");
+  background-image: url("https://forma-online.de/wp-content/themes/childtheme/assets/icons/arrow.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -507,28 +507,28 @@
   font-family: "Archivo";
   font-weight: 400;
   font-style: normal;
-  src: url("https://wolter-furniture.de/wp-content/themes/childtheme/assets/fonts/Archivo-Regular.ttf") format("truetype");
+  src: url("https://forma-online.de/wp-content/themes/childtheme/assets/fonts/Archivo-Regular.ttf") format("truetype");
 }
 /* Spectral (Reguläre Schrift) */
 @font-face {
   font-family: "Spectral";
   font-weight: 400;
   font-style: normal;
-  src: url("https://wolter-furniture.de/wp-content/themes/childtheme/assets/fonts/Spectral-Regular.ttf") format("truetype");
+  src: url("https://forma-online.de/wp-content/themes/childtheme/assets/fonts/Spectral-Regular.ttf") format("truetype");
 }
 /* Roboto Mono (Variable Font mit vollem Gewichtsbereich) */
 @font-face {
   font-family: "Roboto Mono";
   font-weight: 100 700;
   font-style: normal;
-  src: url("https://wolter-furniture.de/wp-content/themes/childtheme/assets/fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+  src: url("https://forma-online.de/wp-content/themes/childtheme/assets/fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
 }
 /* Roboto Mono (Kursiv, falls vorhanden) */
 @font-face {
   font-family: "Roboto Mono";
   font-weight: 100 700;
   font-style: italic;
-  src: url("https://wolter-furniture.de/wp-content/themes/childtheme/assets/fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+  src: url("https://forma-online.de/wp-content/themes/childtheme/assets/fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
 }
 body {
   font-size: clamp(16px, 3.5vmin, 18px);
@@ -1158,8 +1158,8 @@ object {
   width: 40px;
   height: 40px;
   margin-right: 0;
-  -webkit-mask-image: url("https://wolter-furniture.de/wp-content/themes/childtheme/assets/icons/shopping-cart.svg");
-          mask-image: url("https://wolter-furniture.de/wp-content/themes/childtheme/assets/icons/shopping-cart.svg");
+  -webkit-mask-image: url("https://forma-online.de/wp-content/themes/childtheme/assets/icons/shopping-cart.svg");
+          mask-image: url("https://forma-online.de/wp-content/themes/childtheme/assets/icons/shopping-cart.svg");
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -2648,7 +2648,7 @@ section.projects-overview-page-grid .project .project-detail-text {
 }
 .dbw-custom-product-container .product .summary .variations_form .variations tbody tr td.value::after {
   content: "";
-  background: url("https://wolter-furniture.de/wp-content/themes/childtheme/assets/icons/chevron.svg") no-repeat center;
+  background: url("https://forma-online.de/wp-content/themes/childtheme/assets/icons/chevron.svg") no-repeat center;
   background-size: contain;
   width: 18px;
   height: 18px;
