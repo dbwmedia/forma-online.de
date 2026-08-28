@@ -76,3 +76,23 @@ function mein_backend_custom_css() {
 }
 add_action('admin_head', 'mein_backend_custom_css');
 
+//------------------------------------------------
+// # Maintenance Mode (logged-in admins bypass)
+// ------------------------------------------------
+function dbw_maintenance_mode() {
+    if (current_user_can('manage_options')) return;
+    if (is_admin()) return;
+    if (defined('DOING_AJAX') && DOING_AJAX) return;
+    if (defined('DOING_CRON') && DOING_CRON) return;
+    if (strpos($_SERVER['REQUEST_URI'], '/wp-login') !== false) return;
+
+    $file = get_stylesheet_directory() . '/coming-soon.html';
+    if (file_exists($file)) {
+        http_response_code(503);
+        header('Retry-After: 3600');
+        readfile($file);
+        exit;
+    }
+}
+add_action('template_redirect', 'dbw_maintenance_mode');
+
