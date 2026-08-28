@@ -1,37 +1,6 @@
 <?php
-// Die Datei, die Sie in Ihr Child-Theme-Verzeichnis einfügen können
-
-function buffer_start() {
-    ob_start("insert_custom_comment");
+// Insert dbw media credit comment in <head>
+function dbw_insert_credit_comment() {
+    echo "\n<!--\n#####################################################\n#                                                   #\n#     made with ♥ in 2025 by dbw media              #\n#     say hello: hallo@dbw-media.de                 #\n#     or visit: https://dbw-media.de                #\n#                                                   #\n#####################################################\n-->\n";
 }
-
-function buffer_end() {
-    // Prüft, ob ein Output Buffer aktiv ist, bevor versucht wird, ihn zu beenden
-    if (ob_get_level() > 0) {
-        ob_end_flush();
-    }
-}
-
-function insert_custom_comment($buffer) {
-    $custom_html_comment = <<<EOD
-
-<!--
-#####################################################
-#                                                   #
-#     made with ♥ in 2025 by dbw media              #
-#     say hello: hallo@dbw-media.de                 #
-#     or visit: https://dbw-media.de                #
-#                                                   #
-#####################################################
--->
-EOD;
-
-    // Sucht den Anfang des <head>-Tags und fügt den Kommentar direkt davor ein
-    $buffer = preg_replace("/(<head.*>)/", $custom_html_comment.'$1', $buffer, 1);
-
-    return $buffer;
-}
-
-add_action('after_setup_theme', 'buffer_start');
-add_action('shutdown', 'buffer_end');
-?>
+add_action('wp_head', 'dbw_insert_credit_comment', 1);

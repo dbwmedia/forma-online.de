@@ -3,6 +3,10 @@
 //--------------------------------------------------------------
 // # Page Einstellungen
 //--------------------------------------------------------------
+html {
+	scroll-behavior: smooth;
+}
+
 #page {
 	position: relative;
 	//overflow: hidden;

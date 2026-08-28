@@ -14,13 +14,7 @@
 	"author": "dbw media",
 	"license": "ISC",
 	"dependencies": {
-		"@splidejs/splide": "^4.1.4",
-		"@studio-freight/lenis": "^1.0.42",
-		"axios": "^1.7.7",
-		"lighthouse": "^12.2.1",
-		"sass-loader": "^16.0.2",
-		"slick-carousel": "^1.8.1",
-		"ws": "^8.18.0"
+		"sass-loader": "^16.0.2"
 	},
 	"devDependencies": {
 		"@eslint/config-array": "^0.19.2",
@@ -30,7 +24,6 @@
 		"core-js": "^3.40.0",
 		"eslint": "^9.19.0",
 		"glob": "^11.0.1",
-		"puppeteer-core": "^24.1.1",
 		"rimraf": "^6.0.1",
 		"sass": "^1.83.4"
 	}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMA - Bald für euch da</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background-color: #fff;
+            color: #222;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 24px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 560px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            color: #222;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            color: #222;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(0, 0, 0, 0.5);
+            margin-bottom: 60px;
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.15);
+            margin: 0 auto 40px;
+        }
+
+        .contact-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, 0.35);
+            margin-bottom: 28px;
+        }
+
+        .contact-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .contact-person {
+            text-align: center;
+        }
+
+        .contact-person .name {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .contact-person .role {
+            font-size: 13px;
+            color: rgba(0, 0, 0, 0.45);
+            margin-bottom: 10px;
+        }
+
+        .contact-person .phone {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .contact-person .phone a {
+            color: rgba(0, 0, 0, 0.6);
+            text-decoration: none;
+        }
+
+        .contact-person .phone a:hover {
+            color: #222;
+        }
+
+        .email {
+            margin-top: 10px;
+        }
+
+        .email a {
+            font-size: 15px;
+            color: #222;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            padding-bottom: 2px;
+            transition: border-color 0.3s;
+        }
+
+        .email a:hover {
+            border-color: #222;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">FORMA</div>
+
+        <h1>Unsere neue Website<br>wird gerade gebaut.</h1>
+
+        <p class="subtitle">
+            Wir arbeiten im Hintergrund an etwas Neuem.<br>
+            Bei Fragen sind wir jederzeit erreichbar.
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="contact-label">Kontakt</p>
+
+        <div class="contact-grid">
+            <div class="contact-person">
+                <div class="name">Andreas Schneider</div>
+                <div class="role">Schreinermeister</div>
+                <div class="phone"><a href="tel:+4915567263333">+49 15567 263333</a></div>
+            </div>
+            <div class="contact-person">
+                <div class="name">Marvin Wolter</div>
+                <div class="role">Schreinermeister &amp; Designer (HWK)</div>
+                <div class="phone"><a href="tel:+4915164416219">+49 15164 416219</a></div>
+            </div>
+        </div>
+
+        <div class="email">
+            <a href="mailto:hallo@forma-online.de">hallo@forma-online.de</a>
+        </div>
+    </div>
+</body>
+</html>

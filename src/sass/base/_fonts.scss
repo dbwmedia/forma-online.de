@@ -5,7 +5,8 @@
 	font-family: "Archivo";
 	font-weight: 400;
 	font-style: normal;
-	src: url("#{$fontsPath}Archivo-Regular.ttf") format("truetype");
+	font-display: swap;
+	src: url("#{$fontsPath}Archivo-Regular.woff2") format("woff2");
 }
 
 /* Spectral (Reguläre Schrift) */
@@ -13,21 +14,15 @@
 	font-family: "Spectral";
 	font-weight: 400;
 	font-style: normal;
-	src: url("#{$fontsPath}Spectral-Regular.ttf") format("truetype");
+	font-display: swap;
+	src: url("#{$fontsPath}Spectral-Regular.woff2") format("woff2");
 }
 
-/* Roboto Mono (Variable Font mit vollem Gewichtsbereich) */
+/* Roboto Mono (Variable Font) */
 @font-face {
 	font-family: "Roboto Mono";
 	font-weight: 100 700;
 	font-style: normal;
-	src: url("#{$fontsPath}RobotoMono-VariableFont_wght.ttf") format("truetype");
-}
-
-/* Roboto Mono (Kursiv, falls vorhanden) */
-@font-face {
-	font-family: "Roboto Mono";
-	font-weight: 100 700;
-	font-style: italic;
-	src: url("#{$fontsPath}RobotoMono-VariableFont_wght.ttf") format("truetype");
+	font-display: swap;
+	src: url("#{$fontsPath}RobotoMono-VariableFont_wght.woff2") format("woff2");
 }
