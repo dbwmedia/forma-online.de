@@ -6,7 +6,9 @@ import Component_UpdateDynamicAnchors from "./components/updateDynamicAnchors";
 import Component_HeroSlider from "./components/slick";
 import Component_ContactPopup from "./components/contactPopup";
 import Component_SummaryScroll from "./components/summaryScroll.js";
+import Component_SmoothScroll from "./components/smoothScroll";
 
+Component_SmoothScroll();
 Component_ContactPopup();
 Component_toggleLabelPosition();
 Component_UpdateDynamicAnchors();

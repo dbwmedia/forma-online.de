@@ -45,6 +45,15 @@ body button {
 			text-decoration: none;
 		}
 
+		&:active,
+		&:focus {
+			border: 1px solid $c-primary;
+			background: $c-primary;
+			color: $c-white;
+			text-decoration: none;
+			outline: none;
+		}
+
 		.gb-shape svg {
 			width: 1.2em;
 			height: 1.2em;
