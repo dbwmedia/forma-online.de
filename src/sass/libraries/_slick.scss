@@ -5,6 +5,12 @@
 	width: 100%;
 	overflow: hidden;
 	height: 615px;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+
+	&:has(.slider-track) {
+		opacity: 1;
+	}
 
 	--slide-gap: 20px;
 
