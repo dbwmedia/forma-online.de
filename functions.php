@@ -94,5 +94,5 @@ function dbw_maintenance_mode() {
         exit;
     }
 }
-add_action('template_redirect', 'dbw_maintenance_mode');
+// add_action('template_redirect', 'dbw_maintenance_mode');
 
